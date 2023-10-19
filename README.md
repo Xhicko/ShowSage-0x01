@@ -1,6 +1,8 @@
 # Show Sage
 
-This repository is the second and final part of my Django journey before moving on to Django Rest Framework. It is a full-stack project with two main components: a frontend built with HTML, CSS, and JavaScript, and a backend created using Django with the default SQLite database. The project aims to provide various functionalities related to ticket booking, including the ability for users to pay for their booked tickets. It will be rebuilt in the future using Django Rest Framework for enhanced features and scalability.
+Show Sage is your upcoming all-in-one event management solution. This repository is the starting point for a dynamic project that combines a frontend created with HTML, CSS, and JavaScript and a robust Django backend. With a focus on user authentication, ticket booking, and seamless payment processing, Show Sage is set to revolutionize event management. Join us as we embark on this exciting journey, building a feature-rich platform that will redefine how events are managed and experienced. Stay tuned for future enhancements, including a rebuild using Django Rest Framework. Your contributions and feedback are highly appreciated. Welcome to the world of Show Sage!
+
+This repository is the second and final part of my Django journey before moving on to Django Rest Framework. It is a full-stack project with two main components: a frontend built with HTML, CSS, and JavaScript, and a backend created using Django with the default SQLite database. The project aims to provide various functionalities related to ticket booking, including the ability for users to pay for their booked tickets.
 
 ## Features
 
