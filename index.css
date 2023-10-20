@@ -1,0 +1,236 @@
+/* JOSEFIN-SANS FONT START */
+@font-face{
+    font-family: 'Jos000';
+    src: url('Fonts/Josefin_Sans/JosefinSans-Thin.ttf');
+}
+
+@font-face{
+    font-family: 'Jos100';
+    src: url('Fonts/Josefin_Sans/JosefinSans-ExtraLight.ttf');
+}
+
+@font-face{
+    font-family: 'Jos200';
+    src:url('Fonts/Josefin_Sans/JosefinSans-Light.ttf')
+}
+
+@font-face{
+    font-family: 'Jos300';
+    src: url('Fonts/Josefin_Sans/JosefinSans-Medium.ttf');
+}
+
+@font-face{
+    font-family: 'Jos400';
+    src: url('Fonts/Josefin_Sans/JosefinSans-Regular.ttf');
+}
+
+@font-face{
+    font-family: 'Jos500';
+    src: url('Fonts/Josefin_Sans/JosefinSans-SemiBold.ttf');
+}
+
+@font-face{
+    font-family: 'Jos600';
+    src: url('Fonts/Josefin_Sans/JosefinSans-Bold.ttf');
+}
+/* JOSEFIN-SANS FONT END */
+
+
+/* ROBOTO FONT START */
+@font-face {
+    font-family: 'Rob000';
+    src: url('Fonts/Roboto/Roboto-Thin.ttf');
+}
+
+@font-face {
+    font-family: 'Rob100';
+    src: url('Fonts/Roboto/Roboto-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Rob200';
+    src: url('Fonts/Roboto/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Rob300';
+    src: url('Fonts/Roboto/Roboto-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Rob400';
+    src: url('Fonts/Roboto/Roboto-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Rob500';
+    src: url('Fonts/Roboto/Roboto-Black.ttf');
+}
+/* ROBOTO FONT END */
+
+
+/*
+        GENERAL SET UP
+
+    -- FONTS --
+    Buttons Font: Rob 
+    Headung Font: Jos
+    Paragraphs Fonts: Rob
+
+    -- COLORS --
+    Green Background: Use  color White
+    Purple Background: Use color  White
+    Gold Background: Use color Black
+
+    -- MESSAGES --
+    Font : Use Rob
+
+    --  BUTTONS --
+    Font: Use Rob
+    Color:Use white
+    Background: Use Green
+
+*/
+
+:root{
+    /*     -- COLORS --   */
+    --Green-Color:#006400;
+    --Purple-Color:#3C2035;
+    --Purple-Color2:#CBA3DD;
+    --Gold-Color:#eeac05;
+    --Gold-Color2:#1a1302;
+    --Black-Color:#000000;
+    --White-Color:#ffffff;
+
+    /*  -- BACKGROUND COLOR --  */
+    --Green-Bg-Color:#006400;
+    --Purple-Bg-Color:#3C2035;
+    --Gold-Bg-Color:#eeac05;
+    --Black-Bg-Color:#000000;
+    --White-Bg-Color:#ffffff;
+
+    /*  -- Messages--   */
+    --Danger-Background-Color:#ff000091;
+    --Danger-Text-Color:#ffffff;
+    --Danger-Border-Color:#ff0000;
+
+    --Warning-Background-Color:#eeac059a;
+    --Warning-Text-Color:#1a1302;
+    --Warning-Border-Color:#eeac05;
+
+    --Success-Background-Color:#0064009d;
+    --Success-Text-Color:#ffffff;
+    --Success-Border-Color:#006400;
+
+    /*  -- ICON COLOR --     */
+    --icon-white-color:#ffffff;
+    --icon-black-color:#000000;
+    --icon-Gold-color:#eeac05;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.Wrapper{
+    position: relative;
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: var(--Black-Bg-Color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.Logo img{
+    width: 100px;
+}
+
+.Navigation{
+    position: relative;
+}
+
+.Navigation svg{
+    width: 30px;
+    cursor: pointer;
+    color: var(--icon-Gold-color);
+}
+
+.Base{
+    position: fixed;
+    top: 50px;
+    width: 500px;
+    height: 90vh;
+    filter: drop-shadow(1px 1px 3px var(--Black-Bg-Color));
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3px;
+    background-color: var(--White-Bg-Color);
+}
+
+.Navigation_Header{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0;
+    width: 100%;
+}
+
+.Navigation_Cancel{
+    position: absolute;
+    top: -2px;
+    right: 0;
+    width:35px;
+    cursor: pointer;
+    color: var(--icon-Gold-color);
+}
+
+.LogReg{
+    display: flex;
+    width: 100%;
+    background-color: var(--Gold-Bg-Color);
+    padding: 20px 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.LogReg svg{
+   width:20px;
+   margin: 0 5px;
+}
+
+.LogReg p{
+  font-family: 'Rob400';
+}
+
+.Login{
+    border-radius: 3px 0 0 0;
+}
+
+.Register{
+    border-radius: 0 3px 0 0;
+    background-color: var(--Black-Bg-Color);
+}
+
+.Register svg,
+.Register p{
+  color: var(--Gold-Color);
+}
+
+@media screen and (max-width:510px){
+    .Base{
+        width:95%;
+    }
+}
