@@ -288,4 +288,12 @@ font-family: 'Rob400';}
     .Base{
         width:95%;
     }
+
+    .Logo img{
+        width: 40px;
+    }
+
+    .Navigation svg{
+        width: 30px;
+    }
 }
