@@ -259,7 +259,13 @@ nav{
 
 .Login_Details h3{
     text-align: center;
-    font-family: 'Rob400';
+    font-family: 'Rob300';
+    text-transform: uppercase;
+}
+
+.Login_Details p{
+    text-align: center;
+    font-family: 'Rob200';
 }
 
 .Form_Group {
@@ -284,7 +290,7 @@ nav{
     left: 1rem;
     color: var(--Border-color1);
     font-family: 'Rob300';
-    transition: top 0.3s, font-size 0.3s, color 0.3s;
+    transition: top 0.5s, font-size 0.5s, color 0.5s;
     pointer-events: none; 
 }
 
