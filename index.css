@@ -246,10 +246,10 @@ nav{
 
 .Login_Details h3{
     text-align: center;
+    font-family: 'Rob400';
+}
 
-font-family: 'Rob400';}
-
-.Form_Group{
+/* .Form_Group{
     display: flex;
     flex-direction: column-reverse;
 }
@@ -282,7 +282,40 @@ font-family: 'Rob400';}
   padding: 0;
   color: #212121;
   transform: translateY(.3rem) scale(0.8);
+} */
+
+.Form_Group {
+    position: relative;
 }
+
+.Form_Group input {
+    border: none;
+    padding: 12px 15px;
+    font-size: 14px;
+    border: 1px solid var(--Border-color1);
+    border-radius: 3px;
+    outline: none;
+    width: 100%; /* Make the input width 100% of its container */
+}
+
+.Form_Group label {
+    position: absolute;
+    top: .7rem; /* Initial position */
+    left: 1rem;
+    color: var(--Border-color1);
+    font-family: 'Rob300';
+    transition: top 0.3s, font-size 0.3s, color 0.3s;
+    pointer-events: none; /* Prevent label from being interactive */
+}
+
+.Form_Group input:focus ~ label,
+.Form_Group input:not(:placeholder-shown) ~ label {
+    top: -13px; /* Move label up when input is focused or not empty */
+    left: 0;
+    font-size: 12px; /* Adjust font size if needed */
+    color: #212121;
+}
+
 
 @media screen and (max-width:510px){
     .Base{
