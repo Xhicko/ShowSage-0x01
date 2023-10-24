@@ -239,50 +239,36 @@ nav{
   color: var(--Gold-Color);
 }
 
+.Navigation_Detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Navigation_Detail img{
+    margin: 5px 0 0 0;
+    width: 20px;
+}
+
 .Login_Details{
     margin: 5px 0;
     padding: 0 10px;
+    width: 100%;
+}
+
+.Login_Details img{
+    width: 20px;
+    vertical-align: middle;
+    position: absolute;
+    left: 50%;
 }
 
 .Login_Details h3{
     text-align: center;
     font-family: 'Rob400';
+    margin: 30 0 0px 0;
 }
-
-/* .Form_Group{
-    display: flex;
-    flex-direction: column-reverse;
-}
-
-.Form_Group input{
-    border: none;
-    padding: 12px 15px;
-    font-size: 14px;
-    border: 1px solid var(--Border-color1);
-    border-radius: 3px;
-    outline: none;
-}
-
-.Form_Group label{
-    padding-left: 1rem;
-    color: var(--Border-color1);
-    font-family: 'Rob300';
-    transform: translateY(2rem) scale(1);
-    transform-origin: left top;
-    transition: transform 0.3s, font-size 0.3s, color 0.3s;
-}
-
-.Form_Group input:focus,
-.Form_Group input:not(:placeholder-shown) {
-    outline: none;
-  }
-
-.Form_Group input:focus ~ label,
-.Form_Group input:not(:placeholder-shown) ~ label {
-  padding: 0;
-  color: #212121;
-  transform: translateY(.3rem) scale(0.8);
-} */
 
 .Form_Group {
     position: relative;
@@ -295,24 +281,24 @@ nav{
     border: 1px solid var(--Border-color1);
     border-radius: 3px;
     outline: none;
-    width: 100%; /* Make the input width 100% of its container */
+    width: 100%;
 }
 
 .Form_Group label {
     position: absolute;
-    top: .7rem; /* Initial position */
+    top: .7rem; 
     left: 1rem;
     color: var(--Border-color1);
     font-family: 'Rob300';
     transition: top 0.3s, font-size 0.3s, color 0.3s;
-    pointer-events: none; /* Prevent label from being interactive */
+    pointer-events: none; 
 }
 
 .Form_Group input:focus ~ label,
 .Form_Group input:not(:placeholder-shown) ~ label {
-    top: -13px; /* Move label up when input is focused or not empty */
+    top: -14px; 
     left: 0;
-    font-size: 12px; /* Adjust font size if needed */
+    font-size: 13px; 
     color: #212121;
 }
 
