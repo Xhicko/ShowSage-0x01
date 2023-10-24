@@ -171,8 +171,8 @@ nav{
 
 .Base{
     position: fixed;
-    top: 55px;
-    width: 35%;
+    top: 60px;
+    width: 510px;
     /* height: 90vh; */
     filter: drop-shadow(1px 1px 3px var(--Black-Bg-Color));
     left: 50%;
@@ -257,20 +257,28 @@ nav{
     width: 100%;
 }
 
-.Login_Details h3{
-    text-align: center;
+.Login_Detail_top,
+.Login_Detail_Middle,
+.Login_Detail_Bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+.Login_Detail_top h3{
     font-family: 'Rob300';
     text-transform: uppercase;
 }
 
-.Login_Details p{
-    text-align: center;
+.Login_Detail_top p{
     font-family: 'Rob200';
 }
 
 .Form_Group {
     position: relative;
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
 
@@ -294,6 +302,14 @@ nav{
     pointer-events: none; 
 }
 
+.Form_Group svg{
+    width: 25px;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
 .Form_Group input:focus ~ label,
 .Form_Group input:not(:placeholder-shown) ~ label {
     top: -14px; 
@@ -302,10 +318,101 @@ nav{
     color: #212121;
 }
 
+.Form_Button{
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Rob500';
+    font-size: 15px;
+    text-transform: uppercase;
+    background-color: var(--Gold-Bg-Color);
+    color: var(--Gold-Color2);
+    cursor: pointer;
+    transition: transform .5s ease-in-out;
+}
 
-@media screen and (max-width:510px){
+.Form_Button:hover{
+    transform: scale(1.02);
+}
+
+.Other_Form_link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 0 0 ;
+}
+
+.Other_Form_link p{
+    font-family: 'Rob200';
+    padding: 0 5px;
+}
+
+.Other_Form_link a{
+    font-family: 'Rob200';
+    text-decoration: none;
+    color: var(--Gold-Color);
+
+}
+
+.Line_Seperator{
+    text-align: center;
+    margin: 5px 0;
+    position: relative;
+    font-family: 'Rob200';
+}
+
+.Line_Seperator::before{
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    content: '';
+    width: 45%;
+    height: 1px;
+    background-color: #000000;
+}
+
+.Line_Seperator::after{
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    content: '';
+    width: 45%;
+    height: 1px;
+    background-color: #000000;
+}
+
+.Login_Detail_Bottom{
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.External_Authentication_wrap {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 49%;
+    padding: 10px 5px;
+    background-color: var(--Gold-Bg-Color);
+    border-radius: 3px;
+}
+
+.External_Authentication_wrap svg{
+    width: 20px;
+    color: var(--icon-black-color);
+}
+
+.External_Authentication_wrap a {
+    text-decoration: none;
+    color: var(--Gold-Color2);
+    font-family: 'Rob300';
+    text-transform: capitalize;
+}
+
+@media screen and (max-width:560px){
     .Base{
-        width:85%;
+        width:90%;
+        top: 45px;
     }
 
     .Logo img{
@@ -314,5 +421,20 @@ nav{
 
     .Navigation svg{
         width: 30px;
+    }
+
+    .Login_Detail_Bottom{
+        flex-direction: column;
+    }
+
+    .External_Authentication_wrap {
+        width: 100%;
+        margin: 5px 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .External_Authentication_wrap svg{
+        margin: 0  20px 0 0;
     }
 }
