@@ -41,3 +41,8 @@ register.addEventListener('click', function(){
     cancelNav.style.color = '#000000'
 })
 
+const inputElement = document.getElementById('Username');
+inputElement.addEventListener('focus', () => {
+    // Scroll to a specific position (e.g., the input field itself)
+    inputElement.scrollIntoView({ behavior: 'smooth' });
+});
