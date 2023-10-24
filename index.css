@@ -172,7 +172,7 @@ nav{
 .Base{
     position: fixed;
     top: 55px;
-    width: 500px;
+    max-width: 500px;
     height: 90vh;
     filter: drop-shadow(1px 1px 3px var(--Black-Bg-Color));
     left: 50%;
@@ -193,7 +193,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding:0;
-    width: 100%;
+    width: 500px;
 }
 
 .Navigation_Cancel{
@@ -261,15 +261,17 @@ font-family: 'Rob400';}
     border: 1px solid var(--Border-color1);
     border-radius: 3px;
     outline: none;
+    transition: border-color 0.3s;
 }
 
 .Form_Group label{
     padding-left: 1rem;
     color: var(--Border-color1);
     font-family: 'Rob300';
-    transform: translateY(2rem);
+    transform: translateY(2rem) scale(1);
     transform-origin: left top;
     transition: transform 0.3s, font-size 0.3s, color 0.3s;
+    pointer-events: none;
 }
 
 .Form_Group input:focus,
