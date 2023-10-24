@@ -126,6 +126,10 @@
     --icon-white-color:#ffffff;
     --icon-black-color:#000000;
     --icon-Gold-color:#eeac05;
+
+    /*  -- BORDER COLOR --  */
+    --Border-color1:#000000;
+    --Border-color2:#1a1302;
 }
 
 *{
@@ -143,7 +147,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 10px;
+    padding: 0 10px;
     background-color: var(--Black-Bg-Color);
     position: fixed;
     top: 0;
@@ -152,7 +156,7 @@ nav{
 }
 
 .Logo img{
-    width: 100px;
+    width: 60px;
 }
 
 .Navigation{
@@ -160,14 +164,14 @@ nav{
 }
 
 .Navigation svg{
-    width: 30px;
+    width: 40px;
     cursor: pointer;
     color: var(--icon-Gold-color);
 }
 
 .Base{
     position: fixed;
-    top: 50px;
+    top: 55px;
     width: 500px;
     height: 90vh;
     filter: drop-shadow(1px 1px 3px var(--Black-Bg-Color));
@@ -175,6 +179,12 @@ nav{
     transform: translateX(-50%);
     border-radius: 3px;
     background-color: var(--White-Bg-Color);
+    display: flex;
+    flex-direction: column;
+}
+
+.Base.Activate{
+    display: flex;
 }
 
 .Navigation_Header{
@@ -227,6 +237,46 @@ nav{
 .Register svg,
 .Register p{
   color: var(--Gold-Color);
+}
+
+.Login_Details{
+    margin: 5px 0;
+    padding: 0 20px;
+}
+
+.Form_Group{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.Form_Group input{
+    border: none;
+    padding: 12px 15px;
+    font-size: 14px;
+    border: 1px solid var(--Border-color1);
+    border-radius: 3px;
+    outline: none;
+}
+
+.Form_Group label{
+    padding-left: 1rem;
+    color: var(--Border-color1);
+    font-family: 'Rob300';
+    transform: translateY(2rem);
+    transform-origin: left top;
+    transition: transform 0.3s, font-size 0.3s, color 0.3s;
+}
+
+.Form_Group input:focus,
+.Form_Group input:not(:placeholder-shown) {
+    outline: none;
+  }
+
+.Form_Group input:focus ~ label,
+.Form_Group input:not(:placeholder-shown) ~ label {
+  padding: 0;
+  color: #212121;
+  transform: translateY(.3rem) scale(0.8);
 }
 
 @media screen and (max-width:510px){

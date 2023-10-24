@@ -1,3 +1,18 @@
+let baseNavigation = document.querySelector('.Base')
+let navigation = document.querySelector('.Navigation svg')
+let cancelNav0 = document.querySelector('.Navigation_Cancel')
+
+navigation.addEventListener('click', function(){
+    baseNavigation.classList.toggle('Activate')
+
+    cancelNav0.addEventListener('click', function(){
+        baseNavigation.classList.remove('Activate')
+    })
+    
+})
+
+
+
 let login = document.querySelector('.Login')
 let loginSvg = document.querySelector('.Login svg')
 let loginPar = document.querySelector('.Login p')
