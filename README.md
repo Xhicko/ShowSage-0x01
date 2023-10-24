@@ -4,6 +4,9 @@ Show Sage is your upcoming all-in-one event management solution. This repository
 
 This repository is the second and final part of my Django journey before moving on to Django Rest Framework. It is a full-stack project with two main components: a frontend built with HTML, CSS, and JavaScript, and a backend created using Django with the default SQLite database. The project aims to provide various functionalities related to ticket booking, including the ability for users to pay for their booked tickets.
 
+## Visit
+- https://xhicko.github.io/ShowSage-0x01/
+
 ## Features
 
 - **User Account Management:**
