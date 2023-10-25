@@ -130,12 +130,21 @@
     /*  -- BORDER COLOR --  */
     --Border-color1:#000000;
     --Border-color2:#1a1302;
+
+    /*  -- SELECTION COLOR  --   */
+    --selection-color-1:#eeac05
 }
+
 
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+
+::selection{
+    background-color: var(--selection-color-1);
 }
 
 .Wrapper{
@@ -284,7 +293,7 @@ nav{
 
 .Form_Group input {
     border: none;
-    padding: 12px 15px;
+    padding: 12px 15px 12px 35px;
     font-size: 14px;
     border: 1px solid var(--Border-color1);
     border-radius: 3px;
@@ -295,11 +304,18 @@ nav{
 .Form_Group label {
     position: absolute;
     top: .7rem; 
-    left: 1rem;
+    left: 2.3rem;
     color: var(--Border-color1);
     font-family: 'Rob300';
     transition: top 0.5s, font-size 0.5s, color 0.5s;
     pointer-events: none; 
+}
+
+.Input_Icon{
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    width: 25px;
 }
 
 .Form_Group button{
