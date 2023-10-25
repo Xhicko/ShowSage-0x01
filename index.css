@@ -253,7 +253,7 @@ nav{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px 0;
+    padding: 2px 0;
 }
 
 .Navigation_Detail img{
@@ -307,7 +307,7 @@ nav{
 
 .Form_Group input {
     border: none;
-    padding: 12px 15px 12px 35px;
+    padding: 8px 15px 8px 35px;
     font-size: 14px;
     border: 1px solid var(--Border-color1);
     border-radius: 3px;
@@ -317,7 +317,7 @@ nav{
 
 .Form_Group label {
     position: absolute;
-    top: .7rem; 
+    top: .5rem; 
     left: 2.5rem;
     color: var(--Border-color1);
     font-family: 'Rob300';
@@ -328,16 +328,16 @@ nav{
 
 .Input_Icon{
     position: absolute;
-    top: 8px;
+    top: 3px;
     left: 5px;
     width: 25px;
 }
 
 .Form_Group button{
     position: absolute;
-    padding: 6px 7px;
-    top: 1%;
-    right: .9px;
+    padding: 2.1px 7px;
+    top: .5px;
+    right: .92px;
     cursor: pointer;
     border: none;
     border-radius: 0 3px 3px 0;
@@ -453,7 +453,7 @@ nav{
 @media screen and (max-width:560px){
     .Base{
         width:90%;
-        top: 45px;
+        top: 40px;
     }
 
     .Logo img{
