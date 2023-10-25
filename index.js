@@ -20,6 +20,8 @@ let register = document.querySelector('.Register')
 let registerSvg = document.querySelector('.Register svg')
 let registerPar = document.querySelector('.Register p')
 let cancelNav = document.querySelector('.Navigation_Cancel')
+let loginDetails = document.querySelector('.Login_Details')
+let registerDetails = document.querySelector('.Register_Details')
 
 login.addEventListener('click', function(){
     login.style.backgroundColor = '#eeac05'
@@ -29,6 +31,8 @@ login.addEventListener('click', function(){
     registerSvg.style.color = '#eeac05'
     registerPar.style.color = '#eeac05'
     cancelNav.style.color = '#eeac05'
+    loginDetails.style.display = 'flex'
+    registerDetails.style.display = 'none'
 })
 
 register.addEventListener('click', function(){
@@ -39,12 +43,14 @@ register.addEventListener('click', function(){
     loginSvg.style.color = '#eeac05'
     loginPar.style.color = '#eeac05'
     cancelNav.style.color = '#000000'
+    registerDetails.style.display = 'flex'
+    loginDetails.style.display = 'none'
 })
 
 document.addEventListener('DOMContentLoaded', function(){
     let passwordListenerButton = document.querySelectorAll('.PasswordListener')
     passwordListenerButton.forEach(function (button){
-        let passwordField = document.getElementById('Password')
+        let passwordField = button.parentElement.querySelector('input[type="password"]');
         button.addEventListener('click', function(){
             if(passwordField.type === 'password'){
                 passwordField.type = 'text'

@@ -253,6 +253,7 @@ nav{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 10px 0;
 }
 
 .Navigation_Detail img{
@@ -260,28 +261,41 @@ nav{
     width: 20px;
 }
 
-.Login_Details{
+.Login_Details,
+.Register_Details{
     margin: 5px 0;
     padding: 0 10px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
+
+.Register_Details{
+    display: none;
+}
+
 
 .Login_Detail_top,
 .Login_Detail_Middle,
-.Login_Detail_Bottom{
+.Login_Detail_Bottom,
+.Register_Details_top,
+.Register_Details_Middle,
+.Register_Details_Bottom{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-
 }
-.Login_Detail_top h3{
+
+.Login_Detail_top h3,
+.Register_Details_top h3{
     font-family: 'Rob300';
     text-transform: uppercase;
 }
 
-.Login_Detail_top p{
+.Login_Detail_top p,
+.Register_Details_top p{
     font-family: 'Rob200';
 }
 
@@ -304,11 +318,12 @@ nav{
 .Form_Group label {
     position: absolute;
     top: .7rem; 
-    left: 2.3rem;
+    left: 2.5rem;
     color: var(--Border-color1);
     font-family: 'Rob300';
     transition: top 0.5s, font-size 0.5s, color 0.5s;
     pointer-events: none; 
+    text-transform:capitalize;
 }
 
 .Input_Icon{
@@ -370,6 +385,7 @@ nav{
 .Other_Form_link p{
     font-family: 'Rob200';
     padding: 0 5px;
+    text-align: center;
 }
 
 .Other_Form_link a{
@@ -406,7 +422,8 @@ nav{
     background-color: #000000;
 }
 
-.Login_Detail_Bottom{
+.Login_Detail_Bottom,
+.Register_Details_Bottom{
     flex-direction: row;
     justify-content: space-between;
 }
@@ -452,7 +469,8 @@ nav{
     }
     
 
-    .Login_Detail_Bottom{
+    .Login_Detail_Bottom,
+    .Register_Details_Bottom{
         flex-direction: column;
     }
 
