@@ -73,3 +73,15 @@ document.addEventListener('DOMContentLoaded', function(){
         })
     })
 })
+
+
+let focusListener = document.querySelector('.PasswordFocus')
+let focusContent = document.querySelector('.Password_Instruction')
+
+focusListener.addEventListener('focus', function(){
+    focusContent.style.display = 'flex'
+})
+
+focusListener.addEventListener('blur', function(){
+    focusContent.style.display = 'none'
+})
