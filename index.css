@@ -182,19 +182,75 @@ nav{
     position: fixed;
     top: 60px;
     width: 510px;
-    /* height: 90vh; */
     filter: drop-shadow(1px 1px 3px var(--Black-Bg-Color));
     left: 50%;
     transform: translateX(-50%);
     border-radius: 3px;
     background-color: var(--White-Bg-Color);
-    display: none;
+    display: flex;
     flex-direction: column;
 }
 
 .Base.Activate{
     display: flex;
 }
+
+
+.Password_Instruction{
+    position: absolute;
+    top: 20px;
+    left: 4px;
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    z-index: 1;
+    box-shadow: 2px 2px 5px #000000;
+    border-radius: 3px;
+}
+
+.Password_Instruction img{
+    width: 25px;
+    margin: 5px 0;
+}
+
+.Password_Instruction > p{
+    font-family: 'Rob200';
+    font-size: 14px;
+    color: black;
+    text-transform: uppercase;
+    padding: 10px 0 5px 0;
+}
+
+.Password_Wrap{
+    width: 100%;
+    padding: 2px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Password{
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+}
+
+.Password p{
+    font-family: 'Rob100';
+    font-size: 15px;
+    color: black;
+    text-transform: capitalize;
+}
+
+.Password svg{
+    width: 25px;
+    color: #ff0000;
+}
+
 
 .Navigation_Header{
     position: relative;
@@ -272,8 +328,8 @@ nav{
 
 .Register_Details{
     display: none;
+    position: relative;
 }
-
 
 .Login_Detail_top,
 .Login_Detail_Middle,
@@ -483,5 +539,18 @@ nav{
 
     .External_Authentication_wrap svg{
         margin: 0  20px 0 0;
+    }
+
+    .Password_Instruction{
+        top: -46px;
+        left: 3px;
+    }
+    
+    .Password_Wrap{
+       flex-direction: column;
+    }
+
+    .Password{
+        width: 100%;
     }
 }
