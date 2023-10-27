@@ -85,3 +85,35 @@ focusListener.addEventListener('focus', function(){
 focusListener.addEventListener('blur', function(){
     focusContent.style.display = 'none'
 })
+
+
+let eightCharacter = document.querySelector('.Eight_Character')
+let uppercaseCharacter = document.querySelector('.Uppercase_Character')
+let lowercaseCharacter = document.querySelector('.Lowercase_Character')
+let specialCharacter = document.querySelector('.Special_Character')
+let numberCharacter = document.querySelector('.Number_Character')
+let entirelyNotNumeric = document.querySelector('.Entirely_Not_Numeric')
+let eightCharacterTwo = document.querySelector('.Eight_Character2')
+let uppercaseCharacterTwo = document.querySelector('.Uppercase_Character2')
+let lowercaseCharacterTwo = document.querySelector('.Lowercase_Character2')
+let specialCharacterTwo = document.querySelector('.Special_Character2')
+let numberCharacterTwo = document.querySelector('.Number_Character2')
+let entirelyNotNumericTwo = document.querySelector('.Entirely_Not_Numeric2')
+
+function checkPassword(passwordValue){
+    let checkEightCharacter = new RegExp('(?=.{8,})')
+    let checkUppercaseCharacter = new RegExp('(?=.*[A-Z])')
+    let checkLowercaseCharacter = new RegExp('(?=.*[a-z])')
+    let checkSpecialCharacter = new RegExp('(?=.*[!@#\$%\^&\\*+\\-=()!~`])')
+    let checkNumberCharacter = new RegExp('(?=.*[0-9])')
+    let checkEntirelyNotNumeric = new RegExp('^(?=.*[a-zA-Z])(?=.*[0-9]).+$')
+
+    if(checkLowercaseCharacter.test(passwordValue)){
+        lowercaseCharacter.style.display = 'none'
+        lowercaseCharacterTwo.style.display = 'flex'
+    }
+    else{
+        lowercaseCharacter.style.display = 'flex'
+        lowercaseCharacterTwo.style.display = 'none'
+    }
+}
