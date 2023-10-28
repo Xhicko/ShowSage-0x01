@@ -117,3 +117,9 @@ function checkPassword(passwordValue){
         lowercaseCharacterTwo.style.display = 'none'
     }
 }
+
+// if(lower.test(data) && upper.test(data) && number.test(data) && special.test(data) && length.test(data)){
+//     toggleWarapper.style.display = 'none'
+//   }else{
+//     toggleWarapper.style.display = 'flex'
+// }
