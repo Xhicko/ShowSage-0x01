@@ -116,10 +116,58 @@ function checkPassword(passwordValue){
         lowercaseCharacter.style.display = 'flex'
         lowercaseCharacterTwo.style.display = 'none'
     }
+
+    if(checkUppercaseCharacter.test(passwordValue)){
+        uppercaseCharacter.style.display = 'none'
+        uppercaseCharacterTwo.style.display = 'flex'
+    }
+    else{
+        uppercaseCharacter.style.display = 'flex'
+        uppercaseCharacterTwo.style.display = 'none'
+    }
+
+    if(checkEightCharacter.test(passwordValue)){
+        eightCharacter.style.display = 'none'
+        eightCharacterTwo.style.display = 'flex'
+    }
+    else{
+        eightCharacter.style.display = 'flex'
+        eightCharacterTwo.style.display = 'none'
+    }
+
+    if(checkEntirelyNotNumeric.test(passwordValue)){
+        entirelyNotNumeric.style.display = 'none'
+        entirelyNotNumericTwo.style.display = 'flex'
+    }
+    else{
+        entirelyNotNumeric.style.display = 'flex'
+        entirelyNotNumericTwo.style.display = 'none'
+    }
+
+    if(checkNumberCharacter.test(passwordValue)){
+        numberCharacter.style.display = 'none'
+        numberCharacterTwo.style.display = 'flex'
+    }
+    else{
+        numberCharacter.style.display = 'flex'
+        numberCharacterTwo.style.display = 'none'
+    }
+
+    if(checkSpecialCharacter.test(passwordValue)){
+        specialCharacter.style.display = 'none'
+        specialCharacterTwo.style.display = 'flex'
+    }
+    else{
+        specialCharacter.style.display = 'flex'
+        specialCharacterTwo.style.display = 'none'
+    }
+
+    if(checkEightCharacter.test(passwordValue) && checkLowercaseCharacter.test(passwordValue) && checkUppercaseCharacter.test(passwordValue) && checkNumberCharacter.test(passwordValue) && checkSpecialCharacter.test(passwordValue) && checkEntirelyNotNumeric.test(passwordValue)){
+        focusContent.style.display = 'none'
+    }
+    else{
+        focusContent.style.display = 'flex'
+    }
+
 }
 
-// if(lower.test(data) && upper.test(data) && number.test(data) && special.test(data) && length.test(data)){
-//     toggleWarapper.style.display = 'none'
-//   }else{
-//     toggleWarapper.style.display = 'flex'
-// }
