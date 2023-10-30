@@ -87,6 +87,14 @@ focusListener.addEventListener('blur', function(){
 })
 
 
+document.addEventListener('DOMContentLoaded', function(){
+    let passwordInput = document.querySelector('.PasswordInput')
+    passwordInput.addEventListener('input', function(){
+        let passwordValue = passwordInput.value
+        checkPassword(passwordValue)
+    })
+
+    
 let eightCharacter = document.querySelector('.Eight_Character')
 let uppercaseCharacter = document.querySelector('.Uppercase_Character')
 let lowercaseCharacter = document.querySelector('.Lowercase_Character')
@@ -104,7 +112,7 @@ function checkPassword(passwordValue){
     let checkEightCharacter = new RegExp('(?=.{8,})')
     let checkUppercaseCharacter = new RegExp('(?=.*[A-Z])')
     let checkLowercaseCharacter = new RegExp('(?=.*[a-z])')
-    let checkSpecialCharacter = new RegExp('(?=.*[!@#\$%\^&\\*+\\-=()!~`])')
+    let checkSpecialCharacter = new RegExp('(?=.*[!@#\$%\^&\\*+\\-=_()!~`])')
     let checkNumberCharacter = new RegExp('(?=.*[0-9])')
     let checkEntirelyNotNumeric = new RegExp('^(?=.*[a-zA-Z])(?=.*[0-9]).+$')
 
@@ -170,4 +178,62 @@ function checkPassword(passwordValue){
     }
 
 }
+ 
+})
+
+
+
+// document.addEventListener('DOMContentLoaded', function(){
+//    let  passwordInput = document.querySelector('.PasswordInput')
+//    let  passwordWrapper = document.querySelector('.Password_Instruction')
+
+// function passwordRequirementStatus(parentElement, isMet) {
+//     const svg = parentElement.querySelector('svg');
+//     const paths = svg.querySelectorAll('path');
+
+//     if (isMet) {
+//         paths[1].style.display = 'block';  // Check icon
+//         paths[0].style.display = 'none';   // X icon
+//     } else {
+//         paths[1].style.display = 'none';   // Check icon
+//         paths[0].style.display = 'block';  // X icon
+//     }
+// }
+
+
+//    function passwordRequirementChecker(password){
+//             let passwordRequirement = [
+//             { element: document.querySelector('.Eight_Character'), regex: /(?=.{8,})/ },
+//             { element: document.querySelector('.Uppercase_Character'), regex: /(?=.*[A-Z])/ },
+//             { element: document.querySelector('.Lowercase_Character'), regex: /(?=.*[a-z])/ },
+//             // { element: document.querySelector('.Special_Character'), regex: /('(?=.*[!@#\$%\^&\\*+\\-=()!~`])')/ },
+//             { element: document.querySelector('.Number_Character'), regex: /(?=.*[0-9])/ },
+//             { element: document.querySelector('.Entirely_Not_Numeric'), regex: /^(?=.*[a-zA-Z])(?=.*[0-9]).+$/ } 
+//         ]
+
+
+//         let allPasswordRequirement = true
+//             for(let passwordCheckingRequirement of passwordRequirement){
+//                 let isMet = passwordCheckingRequirement.regex.test(password)
+//                 passwordRequirementStatus(passwordCheckingRequirement.element, isMet)
+//                 if(!isMet){
+//                     allPasswordRequirement = false
+//                 }
+//             }
+
+//             if(allPasswordRequirement){
+//                 passwordWrapper.style.display = 'none'
+//             }
+//             else{
+//                 passwordWrapper.style.display = 'flex'
+//             }
+//    }
+
+//    passwordInput.addEventListener('input', function(){
+//         let password = passwordInput.value
+//         passwordRequirementChecker(password) 
+//    })
+
+
+// })
 
