@@ -132,6 +132,7 @@
     /*  -- BORDER COLOR --  */
     --Border-color1:#000000;
     --Border-color2:#1a1302;
+    --Border-color3:#ff0000;
 
     /*  -- SELECTION COLOR  --   */
     --selection-color-1:#eeac05
@@ -262,7 +263,6 @@ nav{
     color: var(--icon-Green-color);
 }
 
-
 .Navigation_Header{
     position: relative;
     display: flex;
@@ -369,6 +369,31 @@ nav{
     color: var(--Danger-Text-Color);
 }
 
+.error-message{
+    display: none;
+    position: absolute;
+    font-size: 13px;
+    font-family: 'Rob100';
+    text-transform: capitalize;
+    color: #ff0000;
+}
+
+.form.Name-Border-Error{
+    border: 1px solid var(--Border-color3);
+}
+
+#email.Email-Error-Border{
+    border: 1px solid var(--Border-color3);
+}
+
+#Password.Password-Error-Border{
+    border: 1px solid var(--Border-color3); 
+}
+
+#ConfirmPassword.ConfirmPassword-Error-Border{
+    border: 1px solid var(--Border-color3); 
+}
+
 
 
 .Login_Details,
@@ -425,6 +450,11 @@ nav{
     width: 100%;
 }
 
+#Username.Form_Group input {
+    border: 1px solid var(--Border-color1);
+}
+
+
 .Form_Group label {
     position: absolute;
     top: .5rem; 
@@ -451,7 +481,7 @@ nav{
     border: none;
     border-radius: 0 3px 3px 0;
     background-color: var(--Gold-Bg-Color);
-    padding: 2.7px 5px;
+    padding: 3px 5px;
 }
 
 .Form_Group button svg{
@@ -567,7 +597,7 @@ nav{
 
     .Base{
         width:90%;
-        top: 48px;
+        top: 43px;
     }
 
     .Logo img{

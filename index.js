@@ -88,97 +88,145 @@ focusListener.addEventListener('blur', function(){
 
 
 document.addEventListener('DOMContentLoaded', function(){
+    let form = document.querySelector('.form');
+    const nameInput = document.getElementById('Username');
+
+    function displayError(){
+        let errorMessage = document.querySelector('.error-message')
+        let inputName = document.querySelector('.Name')
+        errorMessage.style.display = 'flex'
+        inputName.style.border = '1px solid #ff0000'
+
+        console.log('Error Activated')
+    }
+    
+    function clearError(){
+        console.log('Clearing error');
+
+        let errorMessage = document.querySelector('.error-message')
+        let inputName = document.querySelector('.Name')
+        errorMessage.style.display = 'none'
+        inputName.style.border = '1px solid #000000'
+
+        console.log('Error Deactivated')
+    }
+
+    
+    function validateForm(){
+        console.log('Validating form'); 
+        if(nameInput.value.length < 5){
+            displayError()
+            return false
+        }
+        else{
+            console.log('Starting to clear form Error'); 
+            clearError()
+            return true
+        }
+    }
+
+       
+    form.addEventListener('submit', function(event){
+        event.preventDefault()
+
+        if(validateForm()){
+            console.log('Form submitted!')
+        }
+    })
+
+
+    let eightCharacter = document.querySelector('.Eight_Character')
+    let uppercaseCharacter = document.querySelector('.Uppercase_Character')
+    let lowercaseCharacter = document.querySelector('.Lowercase_Character')
+    let specialCharacter = document.querySelector('.Special_Character')
+    let numberCharacter = document.querySelector('.Number_Character')
+    let entirelyNotNumeric = document.querySelector('.Entirely_Not_Numeric')
+    let eightCharacterTwo = document.querySelector('.Eight_Character2')
+    let uppercaseCharacterTwo = document.querySelector('.Uppercase_Character2')
+    let lowercaseCharacterTwo = document.querySelector('.Lowercase_Character2')
+    let specialCharacterTwo = document.querySelector('.Special_Character2')
+    let numberCharacterTwo = document.querySelector('.Number_Character2')
+    let entirelyNotNumericTwo = document.querySelector('.Entirely_Not_Numeric2')
+
+    function checkPassword(passwordValue){
+        let checkEightCharacter = new RegExp('(?=.{8,})')
+        let checkUppercaseCharacter = new RegExp('(?=.*[A-Z])')
+        let checkLowercaseCharacter = new RegExp('(?=.*[a-z])')
+        let checkSpecialCharacter = new RegExp('(?=.*[!@#\$%\^&\\*+\\-=_()!~`])')
+        let checkNumberCharacter = new RegExp('(?=.*[0-9])')
+        let checkEntirelyNotNumeric = new RegExp('^(?=.*[a-zA-Z])(?=.*[0-9]).+$')
+
+        if(checkLowercaseCharacter.test(passwordValue)){
+            lowercaseCharacter.style.display = 'none'
+            lowercaseCharacterTwo.style.display = 'flex'
+        }
+        else{
+            lowercaseCharacter.style.display = 'flex'
+            lowercaseCharacterTwo.style.display = 'none'
+        }
+
+        if(checkUppercaseCharacter.test(passwordValue)){
+            uppercaseCharacter.style.display = 'none'
+            uppercaseCharacterTwo.style.display = 'flex'
+        }
+        else{
+            uppercaseCharacter.style.display = 'flex'
+            uppercaseCharacterTwo.style.display = 'none'
+        }
+
+        if(checkEightCharacter.test(passwordValue)){
+            eightCharacter.style.display = 'none'
+            eightCharacterTwo.style.display = 'flex'
+        }
+        else{
+            eightCharacter.style.display = 'flex'
+            eightCharacterTwo.style.display = 'none'
+        }
+
+        if(checkEntirelyNotNumeric.test(passwordValue)){
+            entirelyNotNumeric.style.display = 'none'
+            entirelyNotNumericTwo.style.display = 'flex'
+        }
+        else{
+            entirelyNotNumeric.style.display = 'flex'
+            entirelyNotNumericTwo.style.display = 'none'
+        }
+
+        if(checkNumberCharacter.test(passwordValue)){
+            numberCharacter.style.display = 'none'
+            numberCharacterTwo.style.display = 'flex'
+        }
+        else{
+            numberCharacter.style.display = 'flex'
+            numberCharacterTwo.style.display = 'none'
+        }
+
+        if(checkSpecialCharacter.test(passwordValue)){
+            specialCharacter.style.display = 'none'
+            specialCharacterTwo.style.display = 'flex'
+        }
+        else{
+            specialCharacter.style.display = 'flex'
+            specialCharacterTwo.style.display = 'none'
+        }
+
+        if(checkEightCharacter.test(passwordValue) && checkLowercaseCharacter.test(passwordValue) && checkUppercaseCharacter.test(passwordValue) && checkNumberCharacter.test(passwordValue) && checkSpecialCharacter.test(passwordValue) && checkEntirelyNotNumeric.test(passwordValue)){
+            focusContent.style.display = 'none'
+        }
+        else{
+            focusContent.style.display = 'flex'
+        }
+
+    }
+ 
+
     let passwordInput = document.querySelector('.PasswordInput')
     passwordInput.addEventListener('input', function(){
         let passwordValue = passwordInput.value
         checkPassword(passwordValue)
     })
-
     
-let eightCharacter = document.querySelector('.Eight_Character')
-let uppercaseCharacter = document.querySelector('.Uppercase_Character')
-let lowercaseCharacter = document.querySelector('.Lowercase_Character')
-let specialCharacter = document.querySelector('.Special_Character')
-let numberCharacter = document.querySelector('.Number_Character')
-let entirelyNotNumeric = document.querySelector('.Entirely_Not_Numeric')
-let eightCharacterTwo = document.querySelector('.Eight_Character2')
-let uppercaseCharacterTwo = document.querySelector('.Uppercase_Character2')
-let lowercaseCharacterTwo = document.querySelector('.Lowercase_Character2')
-let specialCharacterTwo = document.querySelector('.Special_Character2')
-let numberCharacterTwo = document.querySelector('.Number_Character2')
-let entirelyNotNumericTwo = document.querySelector('.Entirely_Not_Numeric2')
 
-function checkPassword(passwordValue){
-    let checkEightCharacter = new RegExp('(?=.{8,})')
-    let checkUppercaseCharacter = new RegExp('(?=.*[A-Z])')
-    let checkLowercaseCharacter = new RegExp('(?=.*[a-z])')
-    let checkSpecialCharacter = new RegExp('(?=.*[!@#\$%\^&\\*+\\-=_()!~`])')
-    let checkNumberCharacter = new RegExp('(?=.*[0-9])')
-    let checkEntirelyNotNumeric = new RegExp('^(?=.*[a-zA-Z])(?=.*[0-9]).+$')
-
-    if(checkLowercaseCharacter.test(passwordValue)){
-        lowercaseCharacter.style.display = 'none'
-        lowercaseCharacterTwo.style.display = 'flex'
-    }
-    else{
-        lowercaseCharacter.style.display = 'flex'
-        lowercaseCharacterTwo.style.display = 'none'
-    }
-
-    if(checkUppercaseCharacter.test(passwordValue)){
-        uppercaseCharacter.style.display = 'none'
-        uppercaseCharacterTwo.style.display = 'flex'
-    }
-    else{
-        uppercaseCharacter.style.display = 'flex'
-        uppercaseCharacterTwo.style.display = 'none'
-    }
-
-    if(checkEightCharacter.test(passwordValue)){
-        eightCharacter.style.display = 'none'
-        eightCharacterTwo.style.display = 'flex'
-    }
-    else{
-        eightCharacter.style.display = 'flex'
-        eightCharacterTwo.style.display = 'none'
-    }
-
-    if(checkEntirelyNotNumeric.test(passwordValue)){
-        entirelyNotNumeric.style.display = 'none'
-        entirelyNotNumericTwo.style.display = 'flex'
-    }
-    else{
-        entirelyNotNumeric.style.display = 'flex'
-        entirelyNotNumericTwo.style.display = 'none'
-    }
-
-    if(checkNumberCharacter.test(passwordValue)){
-        numberCharacter.style.display = 'none'
-        numberCharacterTwo.style.display = 'flex'
-    }
-    else{
-        numberCharacter.style.display = 'flex'
-        numberCharacterTwo.style.display = 'none'
-    }
-
-    if(checkSpecialCharacter.test(passwordValue)){
-        specialCharacter.style.display = 'none'
-        specialCharacterTwo.style.display = 'flex'
-    }
-    else{
-        specialCharacter.style.display = 'flex'
-        specialCharacterTwo.style.display = 'none'
-    }
-
-    if(checkEightCharacter.test(passwordValue) && checkLowercaseCharacter.test(passwordValue) && checkUppercaseCharacter.test(passwordValue) && checkNumberCharacter.test(passwordValue) && checkSpecialCharacter.test(passwordValue) && checkEntirelyNotNumeric.test(passwordValue)){
-        focusContent.style.display = 'none'
-    }
-    else{
-        focusContent.style.display = 'flex'
-    }
-
-}
- 
 })
 
 
