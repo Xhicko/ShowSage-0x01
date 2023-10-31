@@ -451,7 +451,7 @@ nav{
     border: none;
     border-radius: 0 3px 3px 0;
     background-color: var(--Gold-Bg-Color);
-    padding: 3px 5px;
+    padding: 2.7px 5px;
 }
 
 .Form_Group button svg{
@@ -567,7 +567,7 @@ nav{
 
     .Base{
         width:90%;
-        top: 55px;
+        top: 48px;
     }
 
     .Logo img{
