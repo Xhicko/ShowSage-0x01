@@ -189,7 +189,7 @@ nav{
     transform: translateX(-50%);
     border-radius: 3px;
     background-color: var(--White-Bg-Color);
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 
@@ -321,12 +321,55 @@ nav{
     justify-content: center;
     align-items: center;
     padding: 2px 0;
+    position: relative;
 }
 
 .Navigation_Detail img{
     margin: 5px 0 0 0;
     width: 20px;
 }
+
+.Messages_Wrapper{
+    display: none;
+    position: absolute;
+    top: 5px;
+    width: 100%;
+    z-index: 1;
+}
+
+.General_Message_Style{
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    margin: 5px auto;
+    border-radius: 3px;
+}
+
+.General_Message_Style p{
+    font-family: 'Rob300';
+    padding: 5px 10px;
+    text-transform: capitalize;
+}
+
+.Success{
+    background-color: var(--Success-Background-Color);
+    border:2px solid var(--Success-Border-Color);
+    color: var(--Success-Text-Color);
+}
+
+.Warning{
+    background-color: var(--Warning-Background-Color);
+    border:2px solid var(--Warning-Border-Color);
+    color: var(--Warning-Text-Color);
+}
+
+.Danger{
+    background-color: var(--Danger-Background-Color);
+    border:2px solid var(--Danger-Border-Color);
+    color: var(--Danger-Text-Color);
+}
+
+
 
 .Login_Details,
 .Register_Details{
@@ -408,7 +451,7 @@ nav{
     border: none;
     border-radius: 0 3px 3px 0;
     background-color: var(--Gold-Bg-Color);
-    padding: 2px 5px;
+    padding: 3px 5px;
 }
 
 .Form_Group button svg{
@@ -518,9 +561,13 @@ nav{
 }
 
 @media screen and (max-width:560px){
+    .Navigation svg{
+        width: 30px;
+    }
+
     .Base{
         width:90%;
-        top: 40px;
+        top: 55px;
     }
 
     .Logo img{
