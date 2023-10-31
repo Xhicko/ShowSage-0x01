@@ -182,7 +182,6 @@ function checkPassword(passwordValue){
 })
 
 
-
 // document.addEventListener('DOMContentLoaded', function(){
 //    let  passwordInput = document.querySelector('.PasswordInput')
 //    let  passwordWrapper = document.querySelector('.Password_Instruction')
@@ -199,8 +198,6 @@ function checkPassword(passwordValue){
 //         paths[0].style.display = 'block';  // X icon
 //     }
 // }
-
-
 //    function passwordRequirementChecker(password){
 //             let passwordRequirement = [
 //             { element: document.querySelector('.Eight_Character'), regex: /(?=.{8,})/ },
@@ -210,8 +207,6 @@ function checkPassword(passwordValue){
 //             { element: document.querySelector('.Number_Character'), regex: /(?=.*[0-9])/ },
 //             { element: document.querySelector('.Entirely_Not_Numeric'), regex: /^(?=.*[a-zA-Z])(?=.*[0-9]).+$/ } 
 //         ]
-
-
 //         let allPasswordRequirement = true
 //             for(let passwordCheckingRequirement of passwordRequirement){
 //                 let isMet = passwordCheckingRequirement.regex.test(password)
@@ -228,7 +223,6 @@ function checkPassword(passwordValue){
 //                 passwordWrapper.style.display = 'flex'
 //             }
 //    }
-
 //    passwordInput.addEventListener('input', function(){
 //         let password = passwordInput.value
 //         passwordRequirementChecker(password) 
@@ -236,4 +230,3 @@ function checkPassword(passwordValue){
 
 
 // })
-

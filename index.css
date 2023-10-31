@@ -403,16 +403,16 @@ nav{
 .Form_Group button{
     position: absolute;
     top: 1px;
-    right: .92px;
+    right: 1px;
     cursor: pointer;
     border: none;
     border-radius: 0 3px 3px 0;
     background-color: var(--Gold-Bg-Color);
+    padding: 2px 5px;
 }
 
 .Form_Group button svg{
     width: 25px;
-    margin: 2px 5px;
     color: var(--icon-black-color);
 }
 
@@ -527,15 +527,10 @@ nav{
         width: 40px;
     }
 
-    .Navigation svg{
-        width: 30px;
-    }
-
     .Form_Group button{
         margin: 0 ;
     }
     
-
     .Login_Detail_Bottom,
     .Register_Details_Bottom{
         flex-direction: column;
