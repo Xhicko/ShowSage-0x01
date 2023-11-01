@@ -132,7 +132,8 @@
     /*  -- BORDER COLOR --  */
     --Border-color1:#000000;
     --Border-color2:#1a1302;
-    --Border-color3:#ff0000;
+    --Border-Checked-Color:#0064009d;
+    --Border-Error-Color:#ff0000;
 
     /*  -- SELECTION COLOR  --   */
     --selection-color-1:#eeac05
@@ -190,7 +191,7 @@ nav{
     transform: translateX(-50%);
     border-radius: 3px;
     background-color: var(--White-Bg-Color);
-    display: none;
+    display: flex;
     flex-direction: column;
 }
 
@@ -257,11 +258,14 @@ nav{
     display:flex;
 }
 
+
 .Password .bi-check {
     width: 25px;
-    display: none;
+    display: flex;
     color: var(--icon-Green-color);
 }
+
+
 
 .Navigation_Header{
     position: relative;
@@ -369,44 +373,17 @@ nav{
     color: var(--Danger-Text-Color);
 }
 
-.error-message{
-    display: none;
-    position: absolute;
-    font-size: 13px;
-    font-family: 'Rob100';
-    text-transform: capitalize;
-    color: #ff0000;
-}
-
-.form.Name-Border-Error{
-    border: 1px solid var(--Border-color3);
-}
-
-#email.Email-Error-Border{
-    border: 1px solid var(--Border-color3);
-}
-
-#Password.Password-Error-Border{
-    border: 1px solid var(--Border-color3); 
-}
-
-#ConfirmPassword.ConfirmPassword-Error-Border{
-    border: 1px solid var(--Border-color3); 
-}
-
-
-
 .Login_Details,
 .Register_Details{
     margin: 5px 0;
     padding: 0 10px;
     width: 100%;
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 
 .Register_Details{
-    display: none;
+    display: flex;
     position: relative;
 }
 
@@ -436,19 +413,44 @@ nav{
 
 .Form_Group {
     position: relative;
-    margin: 15px 0;
+    margin: 21px 0;
 }
-
 
 .Form_Group input {
     border: none;
-    padding: 8px 15px 8px 35px;
+    padding: 5px 15px 5px 35px;
     font-size: 14px;
     border: 1px solid var(--Border-color1);
     border-radius: 3px;
     outline: none;
     width: 100%;
+    transition: border .2s ease-in-out;
 }
+
+.Form_Group.Checked input {
+ border: 1px solid var(--Border-Checked-Color);
+}
+
+.Form_Group.Error input {
+ border: 1px solid var(--Border-Error-Color);
+}
+
+.Form_Group p{
+    position: absolute;
+    bottom: -12.5px;
+    left: 0;
+    font-size: 13px;
+    font-family: 'Rob100';
+    text-transform: capitalize;
+    color: var(--Border-Error-Color);
+    visibility: hidden;
+    transition: visibility .2s ease-in-out;
+}
+
+.Form_Group.Error p{
+    visibility: visible;
+}
+
 
 #Username.Form_Group input {
     border: 1px solid var(--Border-color1);
@@ -457,7 +459,7 @@ nav{
 
 .Form_Group label {
     position: absolute;
-    top: .5rem; 
+    top: .3rem; 
     left: 2.5rem;
     color: var(--Border-color1);
     font-family: 'Rob300';
@@ -470,7 +472,7 @@ nav{
     position: absolute;
     top: 3px;
     left: 5px;
-    width: 25px;
+    width: 20px;
 }
 
 .Form_Group button{
@@ -481,19 +483,21 @@ nav{
     border: none;
     border-radius: 0 3px 3px 0;
     background-color: var(--Gold-Bg-Color);
-    padding: 3px 5px;
+    padding: 2px 5px;
 }
 
+
+
 .Form_Group button svg{
-    width: 25px;
+    width: 20px;
     color: var(--icon-black-color);
 }
 
 .Form_Group input:focus ~ label,
 .Form_Group input:not(:placeholder-shown) ~ label {
-    top: -14px; 
+    top: -12px; 
     left: 0;
-    font-size: 13px; 
+    font-size: 12px; 
     color: #212121;
 }
 
@@ -597,7 +601,7 @@ nav{
 
     .Base{
         width:90%;
-        top: 43px;
+        top: 40px;
     }
 
     .Logo img{

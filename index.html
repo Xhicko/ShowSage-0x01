@@ -145,11 +145,11 @@
                           <div class="Password">
                             <p>8 Characters long</p>
       
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x Eight_Character " viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x cancel Eight_Character " viewBox="0 0 16 16">
                               <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                             </svg>
 
-                            <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-check Eight_Character2 " viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-check check Eight_Character2 " viewBox="0 0 16 16">
                               <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
                           </div>
@@ -227,28 +227,28 @@
                     <p>Sign up to get a  Show Sage Account!</p>
                   </div>
 
-                  <form class='form' action="#">
+                  <form id="form"  action="#">
 
                       <div class="Form_Group">
-                        <input type="text"  id="Username" class="Name" placeholder=" ">
+                        <input type="text"  id="username"  class="username" placeholder=" ">
                         <label for="Username">Name</label>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-fill Input_Icon" viewBox="0 0 16 16">
                           <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
                         </svg>
-                        <div class="error-message name-error" id="name-error">Name must be at least 5 characters!</div>
+                       <p>Error</p>
                       </div>
 
                       <div class="Form_Group">
-                        <input type="text"  id="email" placeholder=" ">
+                        <input type="text"  id="email" class="email" placeholder=" ">
                         <label for="email">email</label>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-envelope-fill Input_Icon" viewBox="0 0 16 16">
                           <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
                         </svg>
-                        <div class="error-message" id="email-error">Provided Email is Invalid!</div>
+                        <p></p>
                       </div>
 
-                      <div class="Form_Group">
-                        <input type="password" id="Password" class='PasswordFocus PasswordInput' placeholder=" " >
+                      <div class="Form_Group Focus">
+                        <input type="password" id="password"  placeholder=" " >
                         <label for="Password">Password</label>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-lock-fill Input_Icon" viewBox="0 0 16 16">
                           <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
@@ -259,12 +259,12 @@
                           <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
                         </svg>
                        </button>
-                       <div class="error-message" id="password-error">Password does not meet requirement!</div>
+                       <p></p>
                       </div>
 
                       <div class="Form_Group">
-                        <input type="password"  id="ConfirmPassword" placeholder=" ">
-                        <label for="ConfirmPassword">Confirm Password</label>
+                        <input type="password"  id="password2" class="password2" placeholder=" ">
+                        <label for="password2">Confirm Password</label>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-lock-fill Input_Icon" viewBox="0 0 16 16">
                           <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
                         </svg>
@@ -274,7 +274,7 @@
                           <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
                         </svg>
                        </button>
-                       <div class="error-message" id="confirmPassword-error">Both Passwords does not match!</div>
+                       <p></p>
                       </div>
 
                       <button type="submit" class="Form_Button" >Sign up</button>
