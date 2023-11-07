@@ -132,6 +132,7 @@
     /*  -- BORDER COLOR --  */
     --Border-color1:#000000;
     --Border-color2:#1a1302;
+    --Border-color3:#eeac05;
     --Border-Checked-Color:#0064009d;
     --Border-Error-Color:#ff0000;
 
@@ -420,7 +421,7 @@ nav{
     font-size: 14px;
     border: 1px solid var(--Border-color1);
     border-radius: 3px;
-    outline: none;
+
     width: 100%;
     transition: border .2s ease-in-out;
 }
