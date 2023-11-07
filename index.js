@@ -1,52 +1,56 @@
-let baseNavigation = document.querySelector('.Base')
-let navigation = document.querySelector('.Navigation svg')
-let cancelNav0 = document.querySelector('.Navigation_Cancel')
+// Logic to Reveal and Hide Navigation 
+document.addEventListener('DOMContentLoaded', function(){
+        let baseNavigation = document.querySelector('.Base')
+        let navigation = document.querySelector('.Navigation svg')
+        let cancelNav0 = document.querySelector('.Navigation_Cancel')
 
-navigation.addEventListener('click', function(){
-    baseNavigation.classList.toggle('Activate')
+    navigation.addEventListener('click', function(){
+        baseNavigation.classList.toggle('Activate')
 
-    cancelNav0.addEventListener('click', function(){
-        baseNavigation.classList.remove('Activate')
+        cancelNav0.addEventListener('click', function(){
+            baseNavigation.classList.remove('Activate')
+        })
+        
     })
-    
 })
 
+// Logic to switch between Login and Register Panels
+document.addEventListener('DOMContentLoaded', function(){
+    let login = document.querySelector('.Login')
+    let loginSvg = document.querySelector('.Login svg')
+    let loginPar = document.querySelector('.Login p')
+    let register = document.querySelector('.Register')
+    let registerSvg = document.querySelector('.Register svg')
+    let registerPar = document.querySelector('.Register p')
+    let cancelNav = document.querySelector('.Navigation_Cancel')
+    let loginDetails = document.querySelector('.Login_Details')
+    let registerDetails = document.querySelector('.Register_Details')
 
+    login.addEventListener('click', function(){
+        login.style.backgroundColor = '#eeac05'
+        loginSvg.style.color = '#1a1302'
+        loginPar.style.color = '#1a1302'
+        register.style.backgroundColor = '#000000'
+        registerSvg.style.color = '#eeac05'
+        registerPar.style.color = '#eeac05'
+        cancelNav.style.color = '#eeac05'
+        loginDetails.style.display = 'flex'
+        registerDetails.style.display = 'none'
+    })
 
-let login = document.querySelector('.Login')
-let loginSvg = document.querySelector('.Login svg')
-let loginPar = document.querySelector('.Login p')
-let register = document.querySelector('.Register')
-let registerSvg = document.querySelector('.Register svg')
-let registerPar = document.querySelector('.Register p')
-let cancelNav = document.querySelector('.Navigation_Cancel')
-let loginDetails = document.querySelector('.Login_Details')
-let registerDetails = document.querySelector('.Register_Details')
+    register.addEventListener('click', function(){
+        register.style.backgroundColor = '#eeac05'
+        registerSvg.style.color = '#1a1302'
+        registerPar.style.color = '#1a1302'
+        login.style.backgroundColor = '#000000'
+        loginSvg.style.color = '#eeac05'
+        loginPar.style.color = '#eeac05'
+        cancelNav.style.color = '#000000'
+        registerDetails.style.display = 'flex'
+        loginDetails.style.display = 'none'
+    })
 
-login.addEventListener('click', function(){
-    login.style.backgroundColor = '#eeac05'
-    loginSvg.style.color = '#1a1302'
-    loginPar.style.color = '#1a1302'
-    register.style.backgroundColor = '#000000'
-    registerSvg.style.color = '#eeac05'
-    registerPar.style.color = '#eeac05'
-    cancelNav.style.color = '#eeac05'
-    loginDetails.style.display = 'flex'
-    registerDetails.style.display = 'none'
 })
-
-register.addEventListener('click', function(){
-    register.style.backgroundColor = '#eeac05'
-    registerSvg.style.color = '#1a1302'
-    registerPar.style.color = '#1a1302'
-    login.style.backgroundColor = '#000000'
-    loginSvg.style.color = '#eeac05'
-    loginPar.style.color = '#eeac05'
-    cancelNav.style.color = '#000000'
-    registerDetails.style.display = 'flex'
-    loginDetails.style.display = 'none'
-})
-
 
 // Logic to  Hide and Reveal  Password * Registartion and Login Sectipon *
 document.addEventListener('DOMContentLoaded', function(){
@@ -193,7 +197,33 @@ document.addEventListener('DOMContentLoaded', function(){
 
 })
 
-// Input Checking Logic * Registration Section *
+  
+// Function to Display input Error
+function displayError(input, message){
+    let formGroup = input.parentElement
+    formGroup.className = 'Form_Group Error'
+    let errorMessage = formGroup.querySelector('p')
+    errorMessage.innerText = message
+} 
+
+// Function to Clear input Error
+function displayChecked(input){
+    formGroup = input.parentElement
+    formGroup.className = 'Form_Group Checked' 
+}
+
+// Function to Validate Email
+function validateEmail(input){
+    let checkMail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+    if(checkMail.test(input.value.trim())){
+        displayChecked(input)
+    }
+    else{
+        displayError(input, 'Email is not valid!')
+    }
+}
+
+// Input Checking Logic * Registration  Section *
 document.addEventListener('DOMContentLoaded', function(){
 
     // Input Validation References
@@ -203,66 +233,36 @@ document.addEventListener('DOMContentLoaded', function(){
     const password = document.getElementById('password')
     const password2 = document.getElementById('password2')
 
-  
-// Function to Display input Error
-    function displayError(input, message){
-        let formGroup = input.parentElement
-        formGroup.className = 'Form_Group Error'
-        let errorMessage = formGroup.querySelector('p')
-        errorMessage.innerText = message
-    } 
-
-// Function to Clear input Error
-    function displayChecked(input){
-        formGroup = input.parentElement
-        formGroup.className = 'Form_Group Checked' 
+    // function to Check Input Character
+function checkInputCharacter(input, min, max){
+    if(input.value.length < min){
+        displayError(input, `${fieldName(input)} must be more than ${min} Characters!`)
     }
-
- 
-// Function to get Fileds Name
-    function fieldName(input){
-        return input.className.charAt(0).toUpperCase() + input.className.slice(1)
-    } 
-
-// function to Check Input Character
-    function checkInputCharacter(input, min, max){
-        if(input.value.length < min){
-            displayError(input, `${fieldName(input)} must be more than ${min} Characters!`)
-        }
-        else if(input.value.length > max){
-            displayError(input, `${fieldName(input)} Must be less than ${max} Characters!`)
-        }
-        else{
-            displayChecked(input )
-        }
+    else if(input.value.length > max){
+        displayError(input, `${fieldName(input)} Must be less than ${max} Characters!`)
     }
+    else{
+        displayChecked(input )
+    }
+}
 
 
 // Function to Check Input Fields
-    function checkInputFields(inputArray){
-        inputArray.forEach(function(input){
-            if(input.value.trim() === ''){
-                displayError(input, `${fieldName(input)} is required!`)
-            }
-            else{
-                displayChecked(input)
-            }
-        })
-    }
-
-
-// Function to Validate Email
-    function validateEmail(input){
-        let checkMail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-        if(checkMail.test(input.value.trim())){
-            displayChecked(input)
+function checkInputFields(inputArray){
+    inputArray.forEach(function(input){
+        if(input.value.trim() === ''){
+            displayError(input, `${fieldName(input)} is required!`)
         }
         else{
-            displayError(input, 'Email is not valid!')
+            displayChecked(input)
         }
-    }
+    })
+}
 
-
+// Function to get Fileds Name
+function fieldName(input){
+    return input.className.charAt(0).toUpperCase() + input.className.slice(1)
+} 
 
 
 // Function to Check Password Fields
@@ -310,3 +310,78 @@ document.addEventListener('DOMContentLoaded', function(){
         })
 })
 
+// Logic for Login Input
+document.addEventListener('DOMContentLoaded', function(){
+  let    login_form  = document.getElementById('Login_Form')
+  let   login_Username = document.getElementById('Login_Username')
+  let   login_password = document.getElementById('Login_Password')
+
+  
+// Function to get Fileds Name
+function loginfieldName(input){
+    return input.id.charAt(0).toUpperCase() + input.id.slice(1)
+} 
+
+// function to Check Input Character
+function checkLoginInputCharacter(input, min, max){
+    if(input.value.length < min){
+        displayError(input, `${loginfieldName(input)} must be more than ${min} Characters!`)
+    }
+    else if(input.value.length > max){
+        displayError(input, `${loginfieldName(input)} Must be less than ${max} Characters!`)
+    }
+    else{
+        displayChecked(input )
+    }
+}
+
+
+// Function to Check Input Fields
+function checkLoginInputFields(inputArray){
+    inputArray.forEach(function(input){
+        if(input.value.trim() === ''){
+            displayError(input, `${loginfieldName(input)} is required!`)
+        }
+        else{
+            displayChecked(input)
+        }
+    })
+}
+
+
+
+    login_form.addEventListener('submit', function(e){
+         //  Event To prevent form from submiting when they are Errors
+         e.preventDefault()
+            
+         // Check Password Requirements
+                 let allChecksPassed = true
+     
+         // Check Other input Fields
+         checkLoginInputFields([login_Username, login_password])
+     
+         // Integrate input checks with allchecksPassed
+             const inputArray = [login_Username, login_password]
+                 inputArray.forEach(function(input){
+                     if(input.value.trim() === ''){
+                         displayError(input, `${loginfieldName(input)} is required!`)
+                         allChecksPassed = false;
+                     }
+                     else{
+                         if (input === login_Username) {
+                            checkLoginInputCharacter(login_Username, 5, 15);
+                         } 
+                         else if (input === login_password) {
+                            checkLoginInputCharacter(login_password, 8, 25);
+                         }
+                     }
+                 })
+     
+                 //   If all checks passed, submit the form
+                     if (allChecksPassed) {
+                         login_form.submit()
+                     }
+                 
+    })
+
+})
