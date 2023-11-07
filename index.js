@@ -1,5 +1,7 @@
-// Logic to Reveal and Hide Navigation 
-document.addEventListener('DOMContentLoaded', function(){
+if (document.getElementById('Index')){
+    
+    // Logic to Reveal and Hide Navigation 
+    document.addEventListener('DOMContentLoaded', function(){
         let baseNavigation = document.querySelector('.Base')
         let navigation = document.querySelector('.Navigation svg')
         let cancelNav0 = document.querySelector('.Navigation_Cancel')
@@ -12,10 +14,10 @@ document.addEventListener('DOMContentLoaded', function(){
         })
         
     })
-})
+    })
 
-// Logic to switch between Login and Register Panels
-document.addEventListener('DOMContentLoaded', function(){
+    // Logic to switch between Login and Register Panels
+    document.addEventListener('DOMContentLoaded', function(){
     let login = document.querySelector('.Login')
     let loginSvg = document.querySelector('.Login svg')
     let loginPar = document.querySelector('.Login p')
@@ -50,13 +52,13 @@ document.addEventListener('DOMContentLoaded', function(){
         loginDetails.style.display = 'none'
     })
 
-})
+    })
 
-// Logic to  Hide and Reveal  Password * Registartion and Login Sectipon *
-document.addEventListener('DOMContentLoaded', function(){
+    // Logic to  Hide and Reveal  Password * Registartion and Login Sectipon *
+    document.addEventListener('DOMContentLoaded', function(){
     let passwordListenerButton = document.querySelectorAll('.PasswordListener')
 
-// Password Hide and Reveal Logic
+    // Password Hide and Reveal Logic
     passwordListenerButton.forEach(function (button){
         let passwordField = button.parentElement.querySelector('input[type="password"]');
         button.addEventListener('click', function(){
@@ -80,15 +82,15 @@ document.addEventListener('DOMContentLoaded', function(){
             }
         })
     })
-})
+    })
 
-// Logic for Making Passwords *Registration Section *
-document.addEventListener('DOMContentLoaded', function(){
+    // Logic for Making Passwords *Registration Section *
+    document.addEventListener('DOMContentLoaded', function(){
     //  Passwod Requirements Wrapper References
     let focusListener = document.querySelector('.Focus')
     let focusContent = document.querySelector('.Password_Instruction')
 
-// Logic to Open Passwod Requirements Wrapper
+    // Logic to Open Passwod Requirements Wrapper
     focusListener.addEventListener('click', function(event){
         focusContent.style.display = 'flex'
         event.stopPropagation();
@@ -99,121 +101,121 @@ document.addEventListener('DOMContentLoaded', function(){
     })
 
     //Password Checking Refrences
-  let eightCharacter = document.querySelector('.Eight_Character')
-  let uppercaseCharacter = document.querySelector('.Uppercase_Character')
-  let lowercaseCharacter = document.querySelector('.Lowercase_Character')
-  let specialCharacter = document.querySelector('.Special_Character')
-  let numberCharacter = document.querySelector('.Number_Character')
-  let entirelyNotNumeric = document.querySelector('.Entirely_Not_Numeric')
-  let eightCharacterTwo = document.querySelector('.Eight_Character2')
-  let uppercaseCharacterTwo = document.querySelector('.Uppercase_Character2')
-  let lowercaseCharacterTwo = document.querySelector('.Lowercase_Character2')
-  let specialCharacterTwo = document.querySelector('.Special_Character2')
-  let numberCharacterTwo = document.querySelector('.Number_Character2')
-  let entirelyNotNumericTwo = document.querySelector('.Entirely_Not_Numeric2')
+    let eightCharacter = document.querySelector('.Eight_Character')
+    let uppercaseCharacter = document.querySelector('.Uppercase_Character')
+    let lowercaseCharacter = document.querySelector('.Lowercase_Character')
+    let specialCharacter = document.querySelector('.Special_Character')
+    let numberCharacter = document.querySelector('.Number_Character')
+    let entirelyNotNumeric = document.querySelector('.Entirely_Not_Numeric')
+    let eightCharacterTwo = document.querySelector('.Eight_Character2')
+    let uppercaseCharacterTwo = document.querySelector('.Uppercase_Character2')
+    let lowercaseCharacterTwo = document.querySelector('.Lowercase_Character2')
+    let specialCharacterTwo = document.querySelector('.Special_Character2')
+    let numberCharacterTwo = document.querySelector('.Number_Character2')
+    let entirelyNotNumericTwo = document.querySelector('.Entirely_Not_Numeric2')
 
-// making the Checkpassword chekcers function generally avaialbe using variables
+    // making the Checkpassword chekcers function generally avaialbe using variables
 
-  let checkEightCharacter, checkUppercaseCharacter, checkLowercaseCharacter, checkSpecialCharacter, checkNumberCharacter, checkEntirelyNotNumeric;
-  let passwordInput = document.querySelector('.password')
+    let checkEightCharacter, checkUppercaseCharacter, checkLowercaseCharacter, checkSpecialCharacter, checkNumberCharacter, checkEntirelyNotNumeric;
+    let passwordInput = document.querySelector('.password')
 
-  function checkPassword(passwordValue){
-       checkEightCharacter = new RegExp('(?=.{8,})')
-       checkUppercaseCharacter = new RegExp('(?=.*[A-Z])')
-       checkLowercaseCharacter = new RegExp('(?=.*[a-z])')
-       checkSpecialCharacter = new RegExp('(?=.*[!@#\$%\^&\\*+\\-=_()!~`])')
-       checkNumberCharacter = new RegExp('(?=.*[0-9])')
-       checkEntirelyNotNumeric = new RegExp('^(?=.*[a-zA-Z])(?=.*[0-9]).+$')
+    function checkPassword(passwordValue){
+    checkEightCharacter = new RegExp('(?=.{8,})')
+    checkUppercaseCharacter = new RegExp('(?=.*[A-Z])')
+    checkLowercaseCharacter = new RegExp('(?=.*[a-z])')
+    checkSpecialCharacter = new RegExp('(?=.*[!@#\$%\^&\\*+\\-=_()!~`])')
+    checkNumberCharacter = new RegExp('(?=.*[0-9])')
+    checkEntirelyNotNumeric = new RegExp('^(?=.*[a-zA-Z])(?=.*[0-9]).+$')
 
-      if(checkLowercaseCharacter.test(passwordValue)){
-          lowercaseCharacter.style.display = 'none'
-          lowercaseCharacterTwo.style.display = 'flex'
-      }
-      else{
-          lowercaseCharacter.style.display = 'flex'
-          lowercaseCharacterTwo.style.display = 'none'
-      }
+    if(checkLowercaseCharacter.test(passwordValue)){
+        lowercaseCharacter.style.display = 'none'
+        lowercaseCharacterTwo.style.display = 'flex'
+    }
+    else{
+        lowercaseCharacter.style.display = 'flex'
+        lowercaseCharacterTwo.style.display = 'none'
+    }
 
-      if(checkUppercaseCharacter.test(passwordValue)){
-          uppercaseCharacter.style.display = 'none'
-          uppercaseCharacterTwo.style.display = 'flex'
-      }
-      else{
-          uppercaseCharacter.style.display = 'flex'
-          uppercaseCharacterTwo.style.display = 'none'
-      }
+    if(checkUppercaseCharacter.test(passwordValue)){
+        uppercaseCharacter.style.display = 'none'
+        uppercaseCharacterTwo.style.display = 'flex'
+    }
+    else{
+        uppercaseCharacter.style.display = 'flex'
+        uppercaseCharacterTwo.style.display = 'none'
+    }
 
-      if(checkEightCharacter.test(passwordValue)){
-          eightCharacter.style.display = 'none'
-          eightCharacterTwo.style.display = 'flex'
-      }
-      else{
-          eightCharacter.style.display = 'flex'
-          eightCharacterTwo.style.display = 'none'
-      }
+    if(checkEightCharacter.test(passwordValue)){
+        eightCharacter.style.display = 'none'
+        eightCharacterTwo.style.display = 'flex'
+    }
+    else{
+        eightCharacter.style.display = 'flex'
+        eightCharacterTwo.style.display = 'none'
+    }
 
-      if(checkEntirelyNotNumeric.test(passwordValue)){
-          entirelyNotNumeric.style.display = 'none'
-          entirelyNotNumericTwo.style.display = 'flex'
-      }
-      else{
-          entirelyNotNumeric.style.display = 'flex'
-          entirelyNotNumericTwo.style.display = 'none'
-      }
+    if(checkEntirelyNotNumeric.test(passwordValue)){
+        entirelyNotNumeric.style.display = 'none'
+        entirelyNotNumericTwo.style.display = 'flex'
+    }
+    else{
+        entirelyNotNumeric.style.display = 'flex'
+        entirelyNotNumericTwo.style.display = 'none'
+    }
 
-      if(checkNumberCharacter.test(passwordValue)){
-          numberCharacter.style.display = 'none'
-          numberCharacterTwo.style.display = 'flex'
-      }
-      else{
-          numberCharacter.style.display = 'flex'
-          numberCharacterTwo.style.display = 'none'
-      }
+    if(checkNumberCharacter.test(passwordValue)){
+        numberCharacter.style.display = 'none'
+        numberCharacterTwo.style.display = 'flex'
+    }
+    else{
+        numberCharacter.style.display = 'flex'
+        numberCharacterTwo.style.display = 'none'
+    }
 
-      if(checkSpecialCharacter.test(passwordValue)){
-          specialCharacter.style.display = 'none'
-          specialCharacterTwo.style.display = 'flex'
-      }
-      else{
-          specialCharacter.style.display = 'flex'
-          specialCharacterTwo.style.display = 'none'
-      }
+    if(checkSpecialCharacter.test(passwordValue)){
+        specialCharacter.style.display = 'none'
+        specialCharacterTwo.style.display = 'flex'
+    }
+    else{
+        specialCharacter.style.display = 'flex'
+        specialCharacterTwo.style.display = 'none'
+    }
 
-      if(checkEightCharacter.test(passwordValue) && checkLowercaseCharacter.test(passwordValue) && checkUppercaseCharacter.test(passwordValue) && checkNumberCharacter.test(passwordValue) && checkSpecialCharacter.test(passwordValue) && checkEntirelyNotNumeric.test(passwordValue)){
-          focusContent.style.display = 'none'
-      }
-      else{
-          focusContent.style.display = 'flex'
-      }
+    if(checkEightCharacter.test(passwordValue) && checkLowercaseCharacter.test(passwordValue) && checkUppercaseCharacter.test(passwordValue) && checkNumberCharacter.test(passwordValue) && checkSpecialCharacter.test(passwordValue) && checkEntirelyNotNumeric.test(passwordValue)){
+        focusContent.style.display = 'none'
+    }
+    else{
+        focusContent.style.display = 'flex'
+    }
 
-  }
+    }
 
-  // Listens to the password inputs for making passwords
+    // Listens to the password inputs for making passwords
         passwordInput.addEventListener('input', function(){
         let passwordValue = passwordInput.value
         checkPassword(passwordValue)
-  })
+    })
 
 
-})
+    })
 
-  
-// Function to Display input Error
-function displayError(input, message){
+
+    // Function to Display input Error
+    function displayError(input, message){
     let formGroup = input.parentElement
     formGroup.className = 'Form_Group Error'
     let errorMessage = formGroup.querySelector('p')
     errorMessage.innerText = message
-} 
+    } 
 
-// Function to Clear input Error
-function displayChecked(input){
+    // Function to Clear input Error
+    function displayChecked(input){
     formGroup = input.parentElement
     formGroup.className = 'Form_Group Checked' 
-}
+    }
 
-// Function to Validate Email
-function validateEmail(input){
+    // Function to Validate Email
+    function validateEmail(input){
     let checkMail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
     if(checkMail.test(input.value.trim())){
         displayChecked(input)
@@ -221,10 +223,10 @@ function validateEmail(input){
     else{
         displayError(input, 'Email is not valid!')
     }
-}
+    }
 
-// Input Checking Logic * Registration  Section *
-document.addEventListener('DOMContentLoaded', function(){
+    // Input Checking Logic * Registration  Section *
+    document.addEventListener('DOMContentLoaded', function(){
 
     // Input Validation References
     const form = document.getElementById('Registration_Form')
@@ -234,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const password2 = document.getElementById('password2')
 
     // function to Check Input Character
-function checkInputCharacter(input, min, max){
+    function checkInputCharacter(input, min, max){
     if(input.value.length < min){
         displayError(input, `${fieldName(input)} must be more than ${min} Characters!`)
     }
@@ -244,11 +246,11 @@ function checkInputCharacter(input, min, max){
     else{
         displayChecked(input )
     }
-}
+    }
 
 
-// Function to Check Input Fields
-function checkInputFields(inputArray){
+    // Function to Check Input Fields
+    function checkInputFields(inputArray){
     inputArray.forEach(function(input){
         if(input.value.trim() === ''){
             displayError(input, `${fieldName(input)} is required!`)
@@ -257,15 +259,15 @@ function checkInputFields(inputArray){
             displayChecked(input)
         }
     })
-}
+    }
 
-// Function to get Fileds Name
-function fieldName(input){
+    // Function to get Fileds Name
+    function fieldName(input){
     return input.className.charAt(0).toUpperCase() + input.className.slice(1)
-} 
+    } 
 
 
-// Function to Check Password Fields
+    // Function to Check Password Fields
     function checkPasswordCharacter(password1, password2){
         if (password1.value !== password2.value ){
             displayError(password2, 'Passwords do not match!')
@@ -308,22 +310,22 @@ function fieldName(input){
                 }
             
         })
-})
+    })
 
-// Logic for Login Input
-document.addEventListener('DOMContentLoaded', function(){
-  let    login_form  = document.getElementById('Login_Form')
-  let   login_Username = document.getElementById('Login_Username')
-  let   login_password = document.getElementById('Login_Password')
+    // Logic for Login Input
+    document.addEventListener('DOMContentLoaded', function(){
+    let    login_form  = document.getElementById('Login_Form')
+    let   login_Username = document.getElementById('Login_Username')
+    let   login_password = document.getElementById('Login_Password')
 
-  
-// Function to get Fileds Name
-function loginfieldName(input){
+
+    // Function to get Fileds Name
+    function loginfieldName(input){
     return input.id.charAt(0).toUpperCase() + input.id.slice(1)
-} 
+    } 
 
-// function to Check Input Character
-function checkLoginInputCharacter(input, min, max){
+    // function to Check Input Character
+    function checkLoginInputCharacter(input, min, max){
     if(input.value.length < min){
         displayError(input, `${loginfieldName(input)} must be more than ${min} Characters!`)
     }
@@ -333,11 +335,11 @@ function checkLoginInputCharacter(input, min, max){
     else{
         displayChecked(input )
     }
-}
+    }
 
 
-// Function to Check Input Fields
-function checkLoginInputFields(inputArray){
+    // Function to Check Input Fields
+    function checkLoginInputFields(inputArray){
     inputArray.forEach(function(input){
         if(input.value.trim() === ''){
             displayError(input, `${loginfieldName(input)} is required!`)
@@ -346,42 +348,47 @@ function checkLoginInputFields(inputArray){
             displayChecked(input)
         }
     })
-}
+    }
 
 
 
     login_form.addEventListener('submit', function(e){
-         //  Event To prevent form from submiting when they are Errors
-         e.preventDefault()
+        //  Event To prevent form from submiting when they are Errors
+        e.preventDefault()
             
-         // Check Password Requirements
-                 let allChecksPassed = true
-     
-         // Check Other input Fields
-         checkLoginInputFields([login_Username, login_password])
-     
-         // Integrate input checks with allchecksPassed
-             const inputArray = [login_Username, login_password]
-                 inputArray.forEach(function(input){
-                     if(input.value.trim() === ''){
-                         displayError(input, `${loginfieldName(input)} is required!`)
-                         allChecksPassed = false;
-                     }
-                     else{
-                         if (input === login_Username) {
+        // Check Password Requirements
+                let allChecksPassed = true
+    
+        // Check Other input Fields
+        checkLoginInputFields([login_Username, login_password])
+    
+        // Integrate input checks with allchecksPassed
+            const inputArray = [login_Username, login_password]
+                inputArray.forEach(function(input){
+                    if(input.value.trim() === ''){
+                        displayError(input, `${loginfieldName(input)} is required!`)
+                        allChecksPassed = false;
+                    }
+                    else{
+                        if (input === login_Username) {
                             checkLoginInputCharacter(login_Username, 5, 15);
-                         } 
-                         else if (input === login_password) {
+                        } 
+                        else if (input === login_password) {
                             checkLoginInputCharacter(login_password, 8, 25);
-                         }
-                     }
-                 })
-     
-                 //   If all checks passed, submit the form
-                     if (allChecksPassed) {
-                         login_form.submit()
-                     }
-                 
+                        }
+                    }
+                })
+    
+                //   If all checks passed, submit the form
+                    if (allChecksPassed) {
+                        login_form.submit()
+                    }
+                
     })
 
-})
+    })
+}
+
+if (document.getElementById('Index2')){
+    
+}
