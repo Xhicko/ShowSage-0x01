@@ -48,7 +48,7 @@ register.addEventListener('click', function(){
 })
 
 
-// Logic to  Hide and Reveal  Password 
+// Logic to  Hide and Reveal  Password * Registartion and Login Sectipon *
 document.addEventListener('DOMContentLoaded', function(){
     let passwordListenerButton = document.querySelectorAll('.PasswordListener')
 
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function(){
     })
 })
 
-// Logic for Making Passwords
+// Logic for Making Passwords *Registration Section *
 document.addEventListener('DOMContentLoaded', function(){
     //  Passwod Requirements Wrapper References
     let focusListener = document.querySelector('.Focus')
@@ -193,16 +193,15 @@ document.addEventListener('DOMContentLoaded', function(){
 
 })
 
-// Input Checking Logic  Logic
+// Input Checking Logic * Registration Section *
 document.addEventListener('DOMContentLoaded', function(){
 
     // Input Validation References
-    const form = document.getElementById('form')
+    const form = document.getElementById('Registration_Form')
     const username = document.getElementById('username')
     const email = document.getElementById('email')
     const password = document.getElementById('password')
     const password2 = document.getElementById('password2')
-    
 
   
 // Function to Display input Error
@@ -281,7 +280,7 @@ document.addEventListener('DOMContentLoaded', function(){
             let allChecksPassed = true
 
     // Check Other input Fields
-            checkInputFields([username, email, password, password2])
+            checkInputFields([username, email, password, password2,])
 
     // Integrate input checks with allchecksPassed
         const inputArray = [username, email, password, password2]
