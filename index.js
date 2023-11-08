@@ -422,8 +422,7 @@ if (document.getElementById('Index2')){
 
        emailForm.addEventListener('submit', function(e){
            e.preventDefault()
-           console.log('Trying to submit')
-   
+
            if(email.value === ''){
                displayError(email, 'Email is required!')
            }
@@ -432,7 +431,6 @@ if (document.getElementById('Index2')){
            }
            else{
                displayChecked(email)
-               console.log('Trying to submit was Successful')
                emailForm.submit()
            }
    

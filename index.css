@@ -520,7 +520,7 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0 0 0 ;
+    margin: 10px  0 ;
 }
 
 .Other_Form_link p{
@@ -631,7 +631,6 @@ nav{
     font-size: 14px;
     text-align: center;
 }
-
 
 
 
