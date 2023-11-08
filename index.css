@@ -623,6 +623,7 @@ nav{
 .Meta_Information h3{
     font-family: 'Rob400';
     margin: 10px 0 5px 0;
+    text-transform: capitalize;
 }
 
 .Meta_Information p{
