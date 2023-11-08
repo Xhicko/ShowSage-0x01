@@ -390,5 +390,9 @@ if (document.getElementById('Index')){
 }
 
 if (document.getElementById('Index2')){
-   
+   let redirectToHome = document.querySelector('.HOME')
+
+   redirectToHome.addEventListener('click', function(){
+        window.location.href = 'index.html'
+   })
 }
