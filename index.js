@@ -395,4 +395,46 @@ if (document.getElementById('Index2')){
    redirectToHome.addEventListener('click', function(){
         window.location.href = 'index.html'
    })
+
+       
+   let emailForm = document.getElementById('Email_Form')
+   let email = document.getElementById('email')
+   
+   // Function to Display input Error
+   function displayError(input, message){
+       let formGroup = input.parentElement
+       formGroup.className = 'Form_Group Error'
+       let errorMessage = formGroup.querySelector('p')
+       errorMessage.innerText = message
+       } 
+   
+       // Function to Clear input Error
+   function displayChecked(input){
+       formGroup = input.parentElement
+       formGroup.className = 'Form_Group Checked' 
+       }
+
+           // Function to Validate Email
+   function validateEmail(email){
+       let checkMail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+          return checkMail.test(email)
+   }
+
+       emailForm.addEventListener('submit', function(e){
+           e.preventDefault()
+           console.log('Trying to submit')
+   
+           if(email.value === ''){
+               displayError(email, 'Email is required!')
+           }
+           else if(!validateEmail(email.value)){
+           displayError(email, 'Email is not Valid!')
+           }
+           else{
+               displayChecked(email)
+               console.log('Trying to submit was Successful')
+               emailForm.submit()
+           }
+   
+       }) 
 }
