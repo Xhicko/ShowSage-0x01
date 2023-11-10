@@ -630,6 +630,9 @@ nav{
     text-align: center;
 }
 
+.Password_Reset_Confirm_Wrapper{
+
+}
 
 
 @media screen and (max-width:560px){
@@ -643,7 +646,7 @@ nav{
     }
 
     .Forgotten_Password_Wrapper{
-        width:87%;
+        width:85%;
         top: 100px;
     }
 

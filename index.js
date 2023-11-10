@@ -431,8 +431,20 @@ if (document.getElementById('Index2')){
            }
            else{
                displayChecked(email)
-               emailForm.submit()
+            //    emailForm.submit()
+                let verifiedEmail = document.getElementById('Verified')
+                    verifiedEmail.addEventListener('click', function(){
+                    window.location.href = 'Password_Reset_Confirm.html'
+           })
            }
    
        }) 
+}
+
+if(document.getElementById('Index3')){
+    let redirectToHome = document.querySelector('.HOME')
+
+    redirectToHome.addEventListener('click', function(){
+         window.location.href = 'index.html'
+    })
 }
