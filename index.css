@@ -600,11 +600,9 @@ nav{
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.Forgotten_Password_Wrapper form{
     padding: 10px 5px;
 }
+
 
 .Meta_Information{
     display: flex;
@@ -635,7 +633,7 @@ nav{
 
 
 @media screen and (max-width:560px){
-    
+
     .Navigation svg{
         width: 30px;
     }

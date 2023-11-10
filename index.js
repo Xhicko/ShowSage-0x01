@@ -350,8 +350,6 @@ if (document.getElementById('Index')){
     })
     }
 
-
-
     login_form.addEventListener('submit', function(e){
         //  Event To prevent form from submiting when they are Errors
         e.preventDefault()
