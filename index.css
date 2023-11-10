@@ -183,7 +183,8 @@ nav{
     color: var(--icon-Gold-color);
 }
 
-.Base{
+.Base,
+.Forgotten_Password_Wrapper{
     position: fixed;
     top: 60px;
     width: 510px;
@@ -196,6 +197,9 @@ nav{
     flex-direction: column;
 }
 
+.Forgotten_Password_Wrapper{
+    display: flex;
+}
 .Base.Activate{
     display: flex;
 }
@@ -588,7 +592,7 @@ nav{
     text-transform: capitalize;
 }
 
-.Forgotten_Password_Wrapper{
+/* .Forgotten_Password_Wrapper{
     position: fixed;
     top: 100px;
     width: 510px;
@@ -600,8 +604,9 @@ nav{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* padding: 10px 5px; */
-}
+     padding: 10px 5px; 
+} 
+*/
 
 
 .Meta_Information{
