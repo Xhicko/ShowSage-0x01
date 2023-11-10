@@ -200,7 +200,6 @@ nav{
     display: flex;
 }
 
-
 .Password_Instruction{
     position: absolute;
     top: 20px;
@@ -604,7 +603,7 @@ nav{
 }
 
 .Forgotten_Password_Wrapper form{
-        padding: 10px;
+    padding: 10px 5px;
 }
 
 .Meta_Information{
@@ -630,12 +629,13 @@ nav{
     text-align: center;
 }
 
-.Password_Reset_Confirm_Wrapper{
+/* .Password_Reset_Confirm_Wrapper{
 
-}
+} */
 
 
 @media screen and (max-width:560px){
+    
     .Navigation svg{
         width: 30px;
     }
@@ -646,7 +646,7 @@ nav{
     }
 
     .Forgotten_Password_Wrapper{
-        width:85%;
+        width:90%;
         top: 100px;
     }
 
