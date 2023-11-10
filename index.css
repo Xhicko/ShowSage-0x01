@@ -600,7 +600,7 @@ nav{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10px 5px;
+    /* padding: 10px 5px; */
 }
 
 
