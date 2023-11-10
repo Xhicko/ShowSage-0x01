@@ -147,6 +147,10 @@
     box-sizing: border-box;
 }
 
+input, textarea, select, button {
+    font-size: 100%;
+}
+
 
 ::selection{
     background-color: var(--selection-color-1);
@@ -635,7 +639,6 @@ nav{
 /* .Password_Reset_Confirm_Wrapper{
 
 } */
-
 
 @media screen and (max-width:560px){
 
