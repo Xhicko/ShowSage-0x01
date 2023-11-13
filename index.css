@@ -140,7 +140,6 @@
     --selection-color-1:#eeac05
 }
 
-
 *{
     padding: 0;
     margin: 0;
@@ -150,7 +149,6 @@
 input, textarea, select, button {
     font-size: 100%;
 }
-
 
 ::selection{
     background-color: var(--selection-color-1);
@@ -204,6 +202,7 @@ nav{
 .Forgotten_Password_Wrapper{
     display: flex;
 }
+
 .Base.Activate{
     display: flex;
 }
@@ -278,7 +277,6 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:0;
     width: 100%;
 }
 
@@ -380,7 +378,8 @@ nav{
 }
 
 .Login_Details,
-.Register_Details{
+.Register_Details,
+.Password_Reset_Details{
     margin: 5px 0;
     padding: 0 10px;
     width: 100%;
@@ -596,22 +595,6 @@ nav{
     text-transform: capitalize;
 }
 
-/* .Forgotten_Password_Wrapper{
-    position: fixed;
-    top: 100px;
-    width: 510px;
-    filter: drop-shadow(1px 1px 3px var(--Black-Bg-Color));
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 3px;
-    background-color: var(--White-Bg-Color);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-     padding: 10px 5px; 
-} 
-*/
-
 
 .Meta_Information{
     display: flex;
@@ -636,9 +619,7 @@ nav{
     text-align: center;
 }
 
-/* .Password_Reset_Confirm_Wrapper{
 
-} */
 
 @media screen and (max-width:560px){
 
