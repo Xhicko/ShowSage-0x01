@@ -187,7 +187,9 @@ nav{
 
 .Base,
 .Forgotten_Password_Wrapper,
-.Password_Reset_Confirm_Wrapper{
+.Password_Reset_Confirm_Wrapper,
+.Invalid_Reset_Link_Wrapper,
+.Password_Reset_Complete_Wrapper{
     position: fixed;
     top: 60px;
     width: 510px;
@@ -205,6 +207,14 @@ nav{
 }
 
 .Password_Reset_Confirm_Wrapper{
+    display: none;
+}
+
+.Invalid_Reset_Link_Wrapper{
+    display: flex;
+}
+
+.Password_Reset_Complete_Wrapper{
     display: flex;
 }
 
@@ -389,7 +399,9 @@ nav{
 .Login_Details,
 .Register_Details,
 .Password_Reset_Details,
-.Confirm_Password_Details{
+.Confirm_Password_Details,
+.Invalid_Details,
+.Reset_Complete_Details{
     margin: 5px 0;
     padding: 0 10px;
     width: 100%;
@@ -630,6 +642,13 @@ nav{
     text-align: center;
 }
 
+.Anaimated_icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px  0;
+}
+
 
 
 
@@ -641,13 +660,17 @@ nav{
 
     .Base,
     .Forgotten_Password_Wrapper,
-    .Password_Reset_Confirm_Wrapper{
+    .Password_Reset_Confirm_Wrapper,
+    .Invalid_Reset_Link_Wrapper,
+    .Password_Reset_Complete_Wrapper{
         width:90%;
         top: 40px;
     }
 
     .Forgotten_Password_Wrapper,
-    .Password_Reset_Confirm_Wrapper{
+    .Password_Reset_Confirm_Wrapper,
+    .Invalid_Reset_Link_Wrapper,
+    .Password_Reset_Complete_Wrapper{
         top: 100px;
     }
 
