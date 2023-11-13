@@ -482,7 +482,7 @@ nav{
     border: none;
     border-radius: 0 3px 3px 0;
     background-color: var(--Gold-Bg-Color);
-    padding: 2.7px 5px;
+    padding: 3px 5px;
 }
 
 .Form_Group button svg{
