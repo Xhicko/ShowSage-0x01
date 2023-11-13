@@ -524,7 +524,7 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px  0 ;
+    margin: 5px  0 ;
 }
 
 .Other_Form_link p{
@@ -542,7 +542,7 @@ nav{
 
 .Line_Seperator{
     text-align: center;
-    margin: 5px 0;
+    margin: 3px 0;
     position: relative;
     font-family: 'Rob200';
 }
