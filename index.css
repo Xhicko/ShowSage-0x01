@@ -507,9 +507,9 @@ nav{
     padding: 10px 15px;
     border: none;
     border-radius: 3px;
-    font-family: 'Rob500';
+    font-family: 'Rob300';
     font-size: 15px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     background-color: var(--Gold-Bg-Color);
     color: var(--Gold-Color2);
     cursor: pointer;
