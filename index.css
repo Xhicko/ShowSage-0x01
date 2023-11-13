@@ -247,7 +247,7 @@ nav{
 
 .Password_Wrap{
     width: 100%;
-    padding: 2px 10px;
+    padding:0 10px;
     display: flex;
     justify-content: space-between;
 }
@@ -681,7 +681,7 @@ nav{
     }
 
     .Password_Adjustment{
-        top: -62px;
+        top: -50px;
     }
     
     .Password_Wrap{
