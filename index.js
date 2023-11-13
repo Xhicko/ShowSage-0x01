@@ -1,6 +1,50 @@
+// Function to Display input Error
+function displayError(input, message){
+    let formGroup = input.parentElement
+    formGroup.className = 'Form_Group Error'
+    let errorMessage = formGroup.querySelector('p')
+    errorMessage.innerText = message
+} 
+
+// Function to Clear input Error
+function displayChecked(input){
+    formGroup = input.parentElement
+    formGroup.className = 'Form_Group Checked' 
+}
+
+// // Function to get Fileds Name
+function fieldName(input){
+    return input.id.charAt(0).toUpperCase() + input.id.slice(1)
+} 
+
+// function to Check Input Character
+function checkInputCharacter(input, min, max){
+    if(input.value.length < min){
+        displayError(input, `${fieldName(input)} must be more than ${min} Characters!`)
+    }
+    else if(input.value.length > max){
+        displayError(input, `${fieldName(input)} Must be less than ${max} Characters!`)
+    }
+    else{
+        displayChecked(input )
+    }
+}
+
+    // Function to Check Input Fields
+function checkInputFields(inputArray){
+    inputArray.forEach(function(input){
+        if(input.value.trim() === ''){
+            displayError(input, `${fieldName(input)} is required!`)
+        }
+        else{
+            displayChecked(input)
+        }
+    })
+}
+
+ //index page Logic
 if (document.getElementById('Index')){
-    
-    // Logic to Reveal and Hide Navigation 
+      // Logic to Reveal and Hide Navigation 
     document.addEventListener('DOMContentLoaded', function(){
         let baseNavigation = document.querySelector('.Base')
         let navigation = document.querySelector('.Navigation svg')
@@ -54,8 +98,163 @@ if (document.getElementById('Index')){
 
     })
 
-    // Logic to  Hide and Reveal  Password * Registartion and Login Sectipon *
+
+    // Function to Display input Error
+    function displayError(input, message){
+    let formGroup = input.parentElement
+    formGroup.className = 'Form_Group Error'
+    let errorMessage = formGroup.querySelector('p')
+    errorMessage.innerText = message
+    } 
+
+    // Function to Clear input Error
+    function displayChecked(input){
+    formGroup = input.parentElement
+    formGroup.className = 'Form_Group Checked' 
+    }
+
+    // Function to Validate Email
+    function validateEmail(input){
+    let checkMail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+    if(checkMail.test(input.value.trim())){
+        displayChecked(input)
+    }
+    else{
+        displayError(input, 'Email is not valid!')
+    }
+    }
+
+    // Input Checking Logic * Registration  Section *
     document.addEventListener('DOMContentLoaded', function(){
+
+    // Input Validation References
+    const registrationForm = document.getElementById('Registration_Form')
+    const username = document.getElementById('username')
+    const email = document.getElementById('email')
+    const password = document.getElementById('password')
+    const password2 = document.getElementById('password2')
+
+
+
+    // Function to Check Password Fields
+function checkPasswordCharacter(password1, password2){
+        if (password1.value !== password2.value ){
+            displayError(password2, 'Passwords do not match!')
+        }
+}
+
+registrationForm.addEventListener('submit', function(e){
+        //  Event To prevent form from submiting when they are Errors
+            e.preventDefault()
+            
+    // Check Password Requirements
+            let allChecksPassed = true
+
+    // Check Other input Fields
+            checkInputFields([username, email, password, password2,])
+
+    // Integrate input checks with allchecksPassed
+        const inputArray = [username, email, password, password2]
+            inputArray.forEach(function(input){
+                if(input.value.trim() === ''){
+                    displayError(input, `${fieldName(input)} is required!`)
+                    allChecksPassed = false;
+                }
+                else if(input === username) {
+                    checkInputCharacter(username, 5, 15);
+                } else if (input === email){
+                    validateEmail(email);
+                } else if (input === password) {
+                    checkInputCharacter(password, 8, 25);
+                    checkPasswordCharacter(password, password2);
+                }
+            })
+
+            //   If all checks passed, submit the form
+            if (allChecksPassed) {
+                registrationForm.submit()
+            }
+
+        })
+    })
+
+    // Logic for Login Input
+    document.addEventListener('DOMContentLoaded', function(){
+    let    login_form  = document.getElementById('Login_Form')
+    let   login_Username = document.getElementById('Login_Username')
+    let   login_password = document.getElementById('Login_Password')
+
+
+    // Function to get Fileds Name
+    function loginfieldName(input){
+    return input.id.charAt(0).toUpperCase() + input.id.slice(1)
+    } 
+
+    // function to Check Input Character
+    function checkLoginInputCharacter(input, min, max){
+    if(input.value.length < min){
+        displayError(input, `${loginfieldName(input)} must be more than ${min} Characters!`)
+    }
+    else if(input.value.length > max){
+        displayError(input, `${loginfieldName(input)} Must be less than ${max} Characters!`)
+    }
+    else{
+        displayChecked(input )
+    }
+    }
+
+
+    // Function to Check Input Fields
+    function checkLoginInputFields(inputArray){
+    inputArray.forEach(function(input){
+        if(input.value.trim() === ''){
+            displayError(input, `${loginfieldName(input)} is required!`)
+        }
+        else{
+            displayChecked(input)
+        }
+    })
+    }
+
+    login_form.addEventListener('submit', function(e){
+        //  Event To prevent form from submiting when they are Errors
+        e.preventDefault()
+            
+        // Check Password Requirements
+                let allChecksPassed = true
+    
+        // Check Other input Fields
+        checkLoginInputFields([login_Username, login_password])
+    
+        // Integrate input checks with allchecksPassed
+            const inputArray = [login_Username, login_password]
+                inputArray.forEach(function(input){
+                    if(input.value.trim() === ''){
+                        displayError(input, `${loginfieldName(input)} is required!`)
+                        allChecksPassed = false;
+                    }
+                    else{
+                        if (input === login_Username) {
+                            checkLoginInputCharacter(login_Username, 5, 15);
+                        } 
+                        else if (input === login_password) {
+                            checkLoginInputCharacter(login_password, 8, 25);
+                        }
+                    }
+                })
+    
+                //   If all checks passed, submit the form
+                    if (allChecksPassed) {
+                        login_form.submit()
+                    }
+                
+    })
+
+    })
+}
+
+// Logic to  Hide and Reveal  Password * Registartion and Login Sectipon *
+  document.addEventListener('DOMContentLoaded', function(){
     let passwordListenerButton = document.querySelectorAll('.PasswordListener')
 
     // Password Hide and Reveal Logic
@@ -82,10 +281,10 @@ if (document.getElementById('Index')){
             }
         })
     })
-    })
+})
 
-    // Logic for Making Passwords *Registration Section *
-    document.addEventListener('DOMContentLoaded', function(){
+// Logic for Making Passwords *Registration Section *
+document.addEventListener('DOMContentLoaded', function(){
     //  Passwod Requirements Wrapper References
     let focusListener = document.querySelector('.Focus')
     let focusContent = document.querySelector('.Password_Instruction')
@@ -197,196 +396,9 @@ if (document.getElementById('Index')){
     })
 
 
-    })
+})
 
-
-    // Function to Display input Error
-    function displayError(input, message){
-    let formGroup = input.parentElement
-    formGroup.className = 'Form_Group Error'
-    let errorMessage = formGroup.querySelector('p')
-    errorMessage.innerText = message
-    } 
-
-    // Function to Clear input Error
-    function displayChecked(input){
-    formGroup = input.parentElement
-    formGroup.className = 'Form_Group Checked' 
-    }
-
-    // Function to Validate Email
-    function validateEmail(input){
-    let checkMail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-    if(checkMail.test(input.value.trim())){
-        displayChecked(input)
-    }
-    else{
-        displayError(input, 'Email is not valid!')
-    }
-    }
-
-    // Input Checking Logic * Registration  Section *
-    document.addEventListener('DOMContentLoaded', function(){
-
-    // Input Validation References
-    const form = document.getElementById('Registration_Form')
-    const username = document.getElementById('username')
-    const email = document.getElementById('email')
-    const password = document.getElementById('password')
-    const password2 = document.getElementById('password2')
-
-    // function to Check Input Character
-    function checkInputCharacter(input, min, max){
-    if(input.value.length < min){
-        displayError(input, `${fieldName(input)} must be more than ${min} Characters!`)
-    }
-    else if(input.value.length > max){
-        displayError(input, `${fieldName(input)} Must be less than ${max} Characters!`)
-    }
-    else{
-        displayChecked(input )
-    }
-    }
-
-
-    // Function to Check Input Fields
-    function checkInputFields(inputArray){
-    inputArray.forEach(function(input){
-        if(input.value.trim() === ''){
-            displayError(input, `${fieldName(input)} is required!`)
-        }
-        else{
-            displayChecked(input)
-        }
-    })
-    }
-
-    // Function to get Fileds Name
-    function fieldName(input){
-    return input.className.charAt(0).toUpperCase() + input.className.slice(1)
-    } 
-
-
-    // Function to Check Password Fields
-    function checkPasswordCharacter(password1, password2){
-        if (password1.value !== password2.value ){
-            displayError(password2, 'Passwords do not match!')
-        }
-    }
-
-    form.addEventListener('submit', function(e){
-        //  Event To prevent form from submiting when they are Errors
-            e.preventDefault()
-            
-    // Check Password Requirements
-            let allChecksPassed = true
-
-    // Check Other input Fields
-            checkInputFields([username, email, password, password2,])
-
-    // Integrate input checks with allchecksPassed
-        const inputArray = [username, email, password, password2]
-            inputArray.forEach(function(input){
-                if(input.value.trim() === ''){
-                    displayError(input, `${fieldName(input)} is required!`)
-                    allChecksPassed = false;
-                }
-                else{
-                    if (input === username) {
-                        checkInputCharacter(username, 5, 15);
-                    } else if (input === email){
-                        validateEmail(email);
-                    } else if (input === password) {
-                        checkInputCharacter(password, 8, 25);
-                        checkPasswordCharacter(password, password2);
-                    }
-                }
-            })
-
-            //   If all checks passed, submit the form
-                if (allChecksPassed) {
-                    form.submit()
-                    window.location.reload();
-                }
-            
-        })
-    })
-
-    // Logic for Login Input
-    document.addEventListener('DOMContentLoaded', function(){
-    let    login_form  = document.getElementById('Login_Form')
-    let   login_Username = document.getElementById('Login_Username')
-    let   login_password = document.getElementById('Login_Password')
-
-
-    // Function to get Fileds Name
-    function loginfieldName(input){
-    return input.id.charAt(0).toUpperCase() + input.id.slice(1)
-    } 
-
-    // function to Check Input Character
-    function checkLoginInputCharacter(input, min, max){
-    if(input.value.length < min){
-        displayError(input, `${loginfieldName(input)} must be more than ${min} Characters!`)
-    }
-    else if(input.value.length > max){
-        displayError(input, `${loginfieldName(input)} Must be less than ${max} Characters!`)
-    }
-    else{
-        displayChecked(input )
-    }
-    }
-
-
-    // Function to Check Input Fields
-    function checkLoginInputFields(inputArray){
-    inputArray.forEach(function(input){
-        if(input.value.trim() === ''){
-            displayError(input, `${loginfieldName(input)} is required!`)
-        }
-        else{
-            displayChecked(input)
-        }
-    })
-    }
-
-    login_form.addEventListener('submit', function(e){
-        //  Event To prevent form from submiting when they are Errors
-        e.preventDefault()
-            
-        // Check Password Requirements
-                let allChecksPassed = true
-    
-        // Check Other input Fields
-        checkLoginInputFields([login_Username, login_password])
-    
-        // Integrate input checks with allchecksPassed
-            const inputArray = [login_Username, login_password]
-                inputArray.forEach(function(input){
-                    if(input.value.trim() === ''){
-                        displayError(input, `${loginfieldName(input)} is required!`)
-                        allChecksPassed = false;
-                    }
-                    else{
-                        if (input === login_Username) {
-                            checkLoginInputCharacter(login_Username, 5, 15);
-                        } 
-                        else if (input === login_password) {
-                            checkLoginInputCharacter(login_password, 8, 25);
-                        }
-                    }
-                })
-    
-                //   If all checks passed, submit the form
-                    if (allChecksPassed) {
-                        login_form.submit()
-                    }
-                
-    })
-
-    })
-}
-
+// Reset Password Validation Logic
 if (document.getElementById('Index2')){
    let redirectToHome = document.querySelector('.HOME')
 
@@ -398,21 +410,7 @@ if (document.getElementById('Index2')){
    let emailForm = document.getElementById('Email_Form')
    let email = document.getElementById('email')
    
-   // Function to Display input Error
-   function displayError(input, message){
-       let formGroup = input.parentElement
-       formGroup.className = 'Form_Group Error'
-       let errorMessage = formGroup.querySelector('p')
-       errorMessage.innerText = message
-       } 
-   
-       // Function to Clear input Error
-   function displayChecked(input){
-       formGroup = input.parentElement
-       formGroup.className = 'Form_Group Checked' 
-       }
-
-           // Function to Validate Email
+// Function to Validate Email
    function validateEmail(email){
        let checkMail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
           return checkMail.test(email)
@@ -428,21 +426,61 @@ if (document.getElementById('Index2')){
            displayError(email, 'Email is not Valid!')
            }
            else{
-               displayChecked(email)
             //    emailForm.submit()
                 let verifiedEmail = document.getElementById('Verified')
-                    verifiedEmail.addEventListener('click', function(){
-                    window.location.href = 'Password_Reset_Confirm.html'
+                verifiedEmail.addEventListener('click', function(){
+                window.location.href = 'Password_Reset_Confirm.html'
+                displayChecked(email)
            })
            }
    
        }) 
 }
 
+// Confirm Password Reset 
 if(document.getElementById('Index3')){
     let redirectToHome = document.querySelector('.HOME')
 
     redirectToHome.addEventListener('click', function(){
          window.location.href = 'index.html'
+    })
+
+    let confirmPasswordForm = document.getElementById('Confrim_Password_Form')
+    let new_Password = document.getElementById('New_Password')
+    let new_Password2 = document.getElementById('New_password2')
+
+// Function to Check Password Fields
+function checkPasswordCharacter(new_Password, new_Password2){
+        if (new_Password.value !== new_Password2.value ){
+            displayError(new_Password2, 'Passwords do not match!')
+        }
+}
+    confirmPasswordForm.addEventListener('submit', function(e){
+        e.preventDefault()
+                 
+    // Check Password Requirements
+        let allChecksPassed = true
+
+    // Check Other input Fields
+        checkInputFields([new_Password, new_Password2,])
+
+    // Integrate input checks with allchecksPassed
+        const inputArray = [new_Password, new_Password2]
+            inputArray.forEach(function(input){
+                if(input.value.trim() === ''){
+                    displayError(input, `${fieldName(input)} is required!`)
+                    allChecksPassed = false;
+                }
+                else if(input === new_Password){
+                    checkInputCharacter(new_Password, 8, 25);
+                    checkPasswordCharacter(new_Password, new_Password2);
+                }
+            })
+
+             //   If all checks passed, submit the form
+             if (allChecksPassed) {
+                confirmPasswordForm.submit()    
+            }
+        
     })
 }

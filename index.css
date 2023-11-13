@@ -186,7 +186,8 @@ nav{
 }
 
 .Base,
-.Forgotten_Password_Wrapper{
+.Forgotten_Password_Wrapper,
+.Password_Reset_Confirm_Wrapper{
     position: fixed;
     top: 60px;
     width: 510px;
@@ -200,6 +201,10 @@ nav{
 }
 
 .Forgotten_Password_Wrapper{
+    display: flex;
+}
+
+.Password_Reset_Confirm_Wrapper{
     display: flex;
 }
 
@@ -221,6 +226,10 @@ nav{
     box-shadow: 2px 2px 5px #000000;
     border-radius: 3px;
     transition: display 0.3s;
+}
+
+.Password_Adjustment{
+    top: 4px;
 }
 
 .Password_Instruction img{
@@ -379,7 +388,8 @@ nav{
 
 .Login_Details,
 .Register_Details,
-.Password_Reset_Details{
+.Password_Reset_Details,
+.Confirm_Password_Details{
     margin: 5px 0;
     padding: 0 10px;
     width: 100%;
@@ -622,19 +632,22 @@ nav{
 
 
 
+
 @media screen and (max-width:560px){
 
     .Navigation svg{
         width: 30px;
     }
 
-    .Base{
+    .Base,
+    .Forgotten_Password_Wrapper,
+    .Password_Reset_Confirm_Wrapper{
         width:90%;
         top: 40px;
     }
 
-    .Forgotten_Password_Wrapper{
-        width:90%;
+    .Forgotten_Password_Wrapper,
+    .Password_Reset_Confirm_Wrapper{
         top: 100px;
     }
 
@@ -665,6 +678,10 @@ nav{
     .Password_Instruction{
         top: -46px;
         left: 3px;
+    }
+
+    .Password_Adjustment{
+        top: -62px;
     }
     
     .Password_Wrap{
