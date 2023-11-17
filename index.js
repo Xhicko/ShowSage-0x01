@@ -49,6 +49,7 @@ if (document.getElementById('Index')){
         let baseNavigation = document.querySelector('.Base')
         let navigation = document.querySelector('.Navigation svg')
         let cancelNav0 = document.querySelector('.Navigation_Cancel')
+        let buttonAuth = document.querySelector('.Button_Auth') 
 
     navigation.addEventListener('click', function(){
         baseNavigation.classList.toggle('Activate')
@@ -58,6 +59,15 @@ if (document.getElementById('Index')){
         })
         
     })
+
+    buttonAuth.addEventListener('click', function(){
+        baseNavigation.classList.add('Activate')
+
+        cancelNav0.addEventListener('click', function(){
+            baseNavigation.classList.remove('Activate')
+        })
+    })
+
     })
 
     // Logic to switch between Login and Register Panels
@@ -172,7 +182,7 @@ registrationForm.addEventListener('submit', function(e){
 
             //   If all checks passed, submit the form
             if (allChecksPassed) {
-                registrationForm.submit()
+                // registrationForm.submit()
             }
 
         })

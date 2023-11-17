@@ -137,7 +137,12 @@
     --Border-Error-Color:#ff0000;
 
     /*  -- SELECTION COLOR  --   */
-    --selection-color-1:#eeac05
+    --selection-color-1:#eeac05;
+
+    /* Button Color */
+    --Gold-Button-Color:#eeac05;
+    --Green-Button-Color:#006400;
+    --Purple-Button-Color:#3C2035;
 }
 
 *{
@@ -650,6 +655,51 @@ nav{
 }
 
 
+.Content_Wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 700px;
+    margin: 40px auto;
+    padding: 5px 2px;
+    z-index: 0;
+}
+
+.CTA_Wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.CTA_Header{
+    margin: 15px  0;
+    text-align: center;
+}
+
+.CTA_Header h3{
+    font-family: 'Rob500';
+    font-size: 2.3rem;
+    color: var(--Green-Color);
+    text-transform: capitalize;
+}
+
+.CTA_Header p{
+    font-family: 'Rob200';
+    font-size: 1rem;
+}
+
+.CTA_Wrapper button{
+    width: 40%;
+    border: none;
+    padding: 10px 5px;
+    border-radius: 3px;
+    background-color: var(--Green-Button-Color);
+    text-decoration: none;
+    color: var(--White-Color);
+    font-family: 'Rob400';
+}
+
 
 
 @media screen and (max-width:560px){
@@ -714,4 +764,31 @@ nav{
     .Password{
         width: 100%;
     }
+}
+
+@media screen and (max-width:680px){
+
+    .Content_Wrapper{
+        width: 90%;
+    }
+
+    .CTA_Wrapper button{
+        width: 60%;
+    }
+    
+    
+}
+
+
+@media screen and (max-width:450px){
+
+    .CTA_Header h3{
+        font-size: 26px;
+    }
+
+    .CTA_Header p{
+        font-size: 14px;
+    }
+    
+    
 }
