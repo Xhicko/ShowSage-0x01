@@ -663,6 +663,7 @@ nav{
     margin: 40px auto;
     padding: 5px 2px;
     z-index: 0;
+    background-color: var(--White-Bg-Color);
 }
 
 .CTA_Wrapper{
@@ -687,6 +688,7 @@ nav{
 .CTA_Header p{
     font-family: 'Rob200';
     font-size: 1rem;
+    color: var(--Black-Color);
 }
 
 .CTA_Wrapper button{
