@@ -679,8 +679,8 @@ nav{
 }
 
 .CTA_Header h3{
-    font-family: 'Rob500';
-    font-size: 2.3rem;
+    font-family: 'Rob400';
+    font-size: 2rem;
     color: var(--Green-Color);
     text-transform: capitalize;
 }
